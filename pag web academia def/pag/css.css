@@ -1,0 +1,238 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color: #0F0;
+}
+#cabezera {
+	
+	position:absolute;
+	width: 1000px;
+	height:217px;
+	z-index:1;
+	left: 10%;
+	right:10%;
+	top: 24px;
+	color: #D6D6D6;
+	
+	
+}
+#informacion {
+	position:relative;
+	width: 1000px;
+	height:45px;
+	left: 10%;
+	right:10%;
+	top: 238px;
+	color:  #00F;
+	font:"Book Antiqua", "Adobe Garamond Pro";
+	font-size:14px;	
+}
+#inicio {
+	
+	position:absolute;
+	width: 1000px;
+	height:591px;
+	left: 10%;
+	right:10%;
+	z-index:2;
+	
+	top: 366px;
+}
+
+#tituloinicio_p {
+	
+	width: 90%;
+	left :5%;
+	
+	position:relative;
+	
+	  
+}
+#apDiv1 {
+	position:absolute;
+	width:70%;
+	height:715px;
+	z-index:3;
+	
+	border: medium groove #D6D6D6;
+	background-color: #FF9;
+	background-image: url(imagenes/logo_2.gif);
+	background-repeat:no-repeat;
+	background-position:center;
+	font:"Book Antiqua", "Adobe Garamond Pro";
+	 
+}
+#apDivanuncio {
+	position:absolute;
+	width:24%;
+	right:0%;
+	height:125px;
+	z-index:3;
+	background-color:  #FF9;
+	border: medium groove #D6D6D6;
+	
+}
+#apDivanuncio_p {
+width: 90%;
+	left :20%;
+	
+	position:relative;
+}
+#apDiv2 {
+	top:150px;
+	position:absolute;
+	width:24%;
+	right:0%;
+	height:185px;
+	z-index:3;
+	background-color: #FF9;
+	border: medium groove #D6D6D6;
+	
+}
+#apDiv2_p {
+width: 90%;
+	left :5%;
+	
+	position:relative;
+}
+#apDiv3 {
+	position:absolute;
+	width:24%;
+	height:215px;
+	right:0%;
+	top:360px;
+	z-index:3;
+	background-color: #FCC;
+	border: medium groove #D6D6D6;
+	background-color: #FFF;
+}
+#tarifas {
+	
+	position:absolute;
+	width: 1000px;
+	height:591px;
+	left: 10%;
+	right:10%;
+	z-index:2;
+	
+	top: 366px;
+}
+/* estilos del menu */ 
+#menu{
+position:absolute;
+	
+	left: 10%;
+	right:10%;
+	z-index:2;
+	
+	top: 266px;
+	
+	
+}
+
+#m_inicio{
+	position: absolute;
+	top:16px;
+	
+}
+#m_tarifas{
+	top:16px;
+	left:113px;
+position: absolute;
+
+}
+#m_talleres{
+	left:236px;
+position: absolute;
+
+}
+#m_matricula{
+	top:15px;
+	left:370px;
+position: absolute;
+
+}
+#m_enlace{
+	left:500px;
+position: absolute;
+
+}
+#m_recursos{
+	left:615px;
+position: absolute;
+
+}
+#m_filosofia{
+	top:15px;
+	left:740px;
+position: absolute;
+
+}
+#m_horario{
+	right:0px;
+position: absolute;
+
+}
+
+#menu{
+ background-color: #C90;
+width:1000px;
+	
+}
+/* estilos de las capas de la pagina de tludicos */ 
+#tludicos {
+	position:absolute;
+width: 1000px;
+	height:891px;
+	left: 10%;
+	right:10%;
+	z-index:2;
+	
+	top: 366px;
+	background-color: #C00;
+	border: medium groove #D6D6D6;
+	background-color: #FF9;
+	background-image: url(imagenes/logo_2.gif);
+	background-repeat:no-repeat;
+	background-position:center;
+	font:"Book Antiqua", "Adobe Garamond Pro";
+	 
+}
+#tludicos_p {
+	
+	width: 95%;
+	left :3%;
+	
+	position:relative;
+	
+	  
+}
+/* estilos de las capas de la pagina de filosofia */ 
+#filosofia {
+	position:absolute;
+width: 1000px;
+	height:851px;
+	left: 10%;
+	right:10%;
+	z-index:2;
+	
+	top: 366px;
+	background-color: #C00;
+	border: medium groove #D6D6D6;
+	background-color: #FF9;
+	background-image: url(imagenes/logo_2.gif);
+	background-repeat:no-repeat;
+	background-position:center;
+	font:"Book Antiqua", "Adobe Garamond Pro";
+	 
+}
+#filosofia_p {
+	
+	width: 95%;
+	left :3%;
+	
+	position:relative;
+	
+	  
+}

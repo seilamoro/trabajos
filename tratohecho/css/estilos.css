@@ -1,0 +1,117 @@
+
+
+nav.menu.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:10;
+}
+/* cambiar el color de fondo a la barra */
+nav.navbar {
+    background-color: red;
+    z-index:1;
+    width: auto;
+
+}
+nav.navbar li a {
+color:white;
+border-left: 1px solid yellow;
+border-right: 1px solid yellow;
+
+}
+.icon-bar {
+  color: yellow;
+  border-color: black;
+  background-color: yellow;
+}
+a{
+	color:white;
+}
+nav.navbar li a:visited {
+	background-color: #8B0000;
+/*color: white;*/
+}
+
+
+.logo1 img{
+	
+}
+.logo2 img{
+	
+	width: 400px;
+	margin-top: 20px;
+	
+
+}
+.textoprincipalhijo {
+	
+	height: 250px;
+	position: absolute; /* podría ser relative */
+
+ 
+} 
+.textoprincipalpadre {
+	position: relative;
+	height: 350px;
+} 
+nav.navbar li a:hover, .navbar li.chosen a {
+	background-color: #000000;
+/*border-top: 1px solid #607e00;
+color: white;
+
+background-image: url('http://img3.xooimage.com/files/c/1/f/sin-t-tulo-1-1c7c303.jpg');
+background-position: top center;
+background-repeat: repeat-x;*/
+}
+         
+img.imgPrincipal{
+	border-radius:75px 75px 0px 0px;
+}
+img.imgSecundario{
+	float: center;
+}
+
+p {
+
+    font-size: 18px;
+    font-weight: normal;
+
+}
+p:first-letter {
+
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+
+}
+td{
+	font-weight: bold;
+}
+body{
+	background-color: #EEEEEE;
+}
+div.principal{
+	background-color:white;
+}
+div.venta{
+	width: 80%;
+	margin: 0 auto;
+}
+div.reparacion{
+	width: 80%;
+	margin: 0 auto;
+}
+a.mail{
+	color: black;
+}
+footer{
+	background-color: red;
+	height: 30px;
+	color: white;
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+}
+div.copy{
+	vertical-align: center;
+}

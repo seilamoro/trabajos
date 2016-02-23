@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trato Hecho Alcobendas</title>
+ 
+    <!-- CSS de Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/estilos.css" rel="stylesheet">
+    <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    
+    $(document).ready(function() {
+        var heights = $(".well2").map(function() {
+            return $(this).height();
+        }).get(),
+     
+        maxHeight = Math.max.apply(null, heights);
+     
+        $(".well2").height(maxHeight);
+    });
+    </script>
+  </head>
+  <body>
+    
+  <header>
+      <div class="principal">
+          <div class="container container-logo cabecera">
+            <div class="col-sm-4 col-md-6 col-lg-6 logo1" >
+                <a href="../index.html">
+                                      
+                      <img src="imagenes/mano1.jpg" class="imgPrincipal" alt="Logo principal" >
+                </a>
+                                         
+            </div>
+              <div class=" visible-lg visible-md visible-sm col-sm-8 col-md-6 col-lg-6 logo2" >
+                                      
+                  <!--<img src="imagenes/reparacindemoviles.jpg" class="imgSecundario" alt="Logo reparacion" >-->
+                                         
+              </div>                        
+          </div>
+      </div>
+    </header>
+    <nav class="navbar menu" data-spy="affix" data-offset-top="187" role="navigation" >
+  <!-- data-spy="affix" data-offset-top="147" El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse"
+                  data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Desplegar navegación</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--<a class="navbar-brand" href="#">INICIO</a>-->
+        </div>
+       
+        <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+             otro elemento que se pueda ocultar al minimizar la barra -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse ">
+          <ul class="nav navbar-nav " >
+            <li><a href="paginas/galeria.html">PRODUCTOS</a></li>
+            <li><a href="paginas/ventaRecuperable.html">VENTA RECUPERABLE</a></li>
+            <li><a href="paginas/reservas.html">RESERVAS</a></li>
+            <li><a href="paginas/llegar.html">CONTACTO</a></li>
+          </ul>
+       
+          
+        </div>
+      </nav>
+  
+   
+    
+
+    
+      <div class="container">
+      <div class="row">
+      <div id="slider" class="col-md-5">
+        <div><img src="imagenes/image1.jpg" alt="tienda trato hecho" class="img-thumbnail" width="350px"  height="350px"></div>
+        <div><img src="imagenes/image2.jpg" alt="tienda trato hecho" class="img-thumbnail" width="350px"  height="350px"></div>
+        <div><img src="imagenes/image5.jpg" alt="tienda trato hecho" class="img-thumbnail" width="350px"  height="350px"></div>
+	<div><img src="imagenes/image4.jpg" alt="tienda trato hecho" class="img-thumbnail" width="350px"  height="350px"></div>
+	
+     </div>
+  	    
+	    <div class="col-md-7 textoprincipalpadre">
+		    <div class="textoprincipalhijo">
+		    <br><br>
+		        <p>Compra y venta de articulos de segunda mano especializada en productos electrónicos.</p>
+    				<p>
+
+    				Ofrecemos dinero a cambio de tu producto electrónico por si te surje algun pago o imprevisto a finales de mes.
+    				Ofrecemos reparacion de moviles y equipos informáticos.</p>
+		    </div>
+		  </div>
+	</div>
+
+    </div>
+
+          <footer>
+          	<div class="copy">
+          		Copyright © 2015 Trato Hecho. All rights reserved.
+          		
+          	</div>
+          	</footer>
+
+    <!-- Librería jQuery requerida por los plugins de JavaScript -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+ 
+    <!-- Todos los plugins JavaScript de Bootstrap (también puedes
+         incluir archivos JavaScript individuales de los únicos
+         plugins que utilices) -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">//<![CDATA[
+      $(function(){
+          $('#slider div:gt(0)').hide();
+          setInterval(function(){
+            $('#slider div:first-child').fadeOut(0)
+               .next('div').fadeIn(1000)
+               .end().appendTo('#slider');}, 6000);//para cambiar los segundos que esta la imagen
+      });
+//]]></script>
+<script>
+    
+    $(document).ready(function() {
+        var heights = $(".well2").map(function() {
+            return $(this).height();
+        }).get(),
+     
+        maxHeight = Math.max.apply(null, heights);
+     
+        $(".well2").height(maxHeight);
+    });
+    </script>
+  </body>
+</html>
