@@ -1,0 +1,93 @@
+-- phpMyAdmin SQL Dump
+-- version 2.9.2
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 06-05-2008 a las 22:00:15
+-- Versión del servidor: 5.0.27
+-- Versión de PHP: 5.2.1
+-- 
+-- Base de datos: `agenda`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `contra`
+-- 
+
+CREATE TABLE `contra` (
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY  (`password`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `contra`
+-- 
+
+INSERT INTO `contra` VALUES ('pepe');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `datos`
+-- 
+
+CREATE TABLE `datos` (
+  `nombre` varchar(100) NOT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `telefono1` varchar(50) NOT NULL,
+  `telefono2` varchar(50) NOT NULL,
+  `fax` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `comentarios` varchar(200) NOT NULL,
+  `privilegio` varchar(2) NOT NULL,
+  PRIMARY KEY  (`nombre`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `datos`
+-- 
+
+INSERT INTO `datos` VALUES ('sheyla', 'd', '987589895', '654898989', '987987987', 'd@hotmail.com', 'ninguno', 'si');
+INSERT INTO `datos` VALUES ('sheyla2', 'ddd', '589898989', '456456456', '546466543', 'dfff@hotmail.com', 'poca cosa', 'no');
+INSERT INTO `datos` VALUES ('jj', '', '', '', '', '', '', 'si');
+INSERT INTO `datos` VALUES ('jj2', '', '', '', '', '', 'mmm', 'si');
+INSERT INTO `datos` VALUES ('jares', 'av/miguel castaño nº31', '987208778', '617537049', '', 'perfectjose69@hotmail.com', 'ningunog', 'no');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `hora_servicio`
+-- 
+
+CREATE TABLE `hora_servicio` (
+  `fecha` date NOT NULL,
+  `horas` time NOT NULL,
+  PRIMARY KEY  (`fecha`,`horas`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `hora_servicio`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `horas`
+-- 
+
+CREATE TABLE `horas` (
+  `indicativo` varchar(25) NOT NULL,
+  `fecha_entrada` date NOT NULL,
+  `fecha_salida` date default NULL,
+  `hora_entrada` time NOT NULL,
+  `hora_salida` time default NULL,
+  `preventivo` varchar(2) NOT NULL,
+  PRIMARY KEY  (`indicativo`,`fecha_entrada`,`hora_entrada`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `horas`
+-- 
