@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<ui:composition template="./headerView.xhtml">
+<ui:define name="content">
+<h:body>  
+	<f:metadata>
+		<f:viewParam name="user" value="#{login.email}"></f:viewParam>
+		<f:viewParam name="role" value="#{login.role}"></f:viewParam>
+	</f:metadata>
+	<h:outputText value="Bienvenido: " aling="right"/>
+	<h:outputText value="#{login.email}" aling="right"/>
+ 		
+</h:body>
+   </ui:define>
+	</ui:composition>
+</html>

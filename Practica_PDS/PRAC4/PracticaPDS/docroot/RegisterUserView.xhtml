@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head> <title>Register a new User</title></h:head>
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+ 		<h:form enctype="multipart/form-data">
+ 			<div class="container mainbox col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2 panel">
+						<fieldset>
+							<!-- Form Name -->
+							<legend>Register a new User</legend>
+							<div class="form-group">
+								<label class="col-12 control-label" for="nif">NIF</label>
+								<div class="input-group">
+								<h:inputText id="nif" styleClass="form-control input-md" value="#{registerUser.nif}" required="true" requiredMessage="Enter a valid NIF" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-12 control-label" for="nif">Name</label>
+								<div class="input-group">
+								<h:inputText id="name" styleClass="form-control input-md" value="#{registerUser.name}" required="true" requiredMessage="Enter a valid Name" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-12 control-label" for="nif">Surname</label>
+								<div class="input-group">
+								<h:inputText id="surname" styleClass="form-control input-md" value="#{registerUser.surname}" required="true" requiredMessage="Enter a valid Surname" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-12 control-label" for="nif">Phone</label>
+								<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
+								<h:inputText id="phone" styleClass="form-control input-md" value="#{registerUser.phone}" required="true" requiredMessage="Enter a valid Phone" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-12 control-label" for="passwordinput">Password</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+									<h:inputSecret id="password" styleClass="form-control input-md" value="#{registerUser.password}" required="true" requiredMessage="Enter a password" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-12 control-label" for="email">E-mail</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+									<h:inputText id="email" styleClass="form-control input-md" value="#{registerUser.email}" required="true" requiredMessage="Enter a valid email" />
+								</div>
+							</div>
+							<!--  Combo box con el listado de provincias pendiente implementar manageBean provincias-->
+							<div class="form-group">
+								<label class="col-12 control-label" for="province">Province</label>
+								<div class="input-group">
+									<h:selectOneMenu  styleClass="form-control input-md" itemLabel="Select one Province" itemValue="0">
+   										<f:selectItems  value="#{listprovinces.provincesList}" var="p" itemLabel="#{p.province}" itemValue="#{p.id}"/>
+   									</h:selectOneMenu>
+   									</div>
+							</div>  
+   							<div class="form-group">
+								<label class="col-12 control-label" for="location">Location</label>
+								<div class="input-group">
+									<h:selectOneMenu id="location" styleClass="form-control input-md" itemLabel="Select one Location" itemValue="0" value="#{registerUser.idLocation}">
+   										<f:selectItems  value="#{listlocations.locationsList}" var="l" itemLabel="#{l.population}" itemValue="#{l.id}"/>
+   									</h:selectOneMenu>
+   									</div>
+							</div>
+							<div class="form-group">
+								<label class="col-12 control-label" for="singlebutton"></label>
+								<div class="col-12 text-center">
+									<h:commandLink styleClass="btn btn-primary" action="#{registerUser.registerUser}">
+										<i class="fa fa-users"></i>
+										<h:outputText value=" " />
+										<h:outputText value="Register User" />
+									</h:commandLink>
+								</div>
+								<div class="col-12 text-center">
+								<h:commandLink styleClass="btn btn-link" value="Cancel" immediate="true" action="indexView" />
+								</div>
+							</div>
+							</fieldset>
+					</div>
+		</h:form>
+		</ui:define>
+	</ui:composition>
+</html>

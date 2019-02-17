@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<div id="content" class="content">
+			<h:form align="left">
+				<div class="row">
+					<!--  <c:if test="#{login.logged == false}">-->
+					<div class="col-xs-12 col-md-4 col-sm-2">
+						<div class="card">
+							<div class="card-header bg-primary text-white mb-3">Find Ads</div>
+							<div class="card-body" style="padding: 0 1.25rem;">
+								<div class="form-group">
+									<label for="title">Title</label>
+									<h:inputText id="title" styleClass="form-control" value="#{findAds.title}"></h:inputText>
+								</div>
+								<div class="form-group">
+									<label for="description">Description</label>
+									<h:inputText id="description" value="#{findAds.description}" styleClass="form-control"></h:inputText>
+								</div>
+								<div class="form-group">
+									<label for="price">Price</label>
+									<h:inputText id="price" styleClass="form-control" value="#{findAds.price}"></h:inputText>
+								</div>
+								<div class="form-group">
+									<label class="col-12 control-label" for="location">Location</label>
+									<div class="input-group">
+										<h:selectOneMenu id="location" styleClass="form-control input-md" itemLabel="Select one Location" itemValue="0" value="#{findAds.idLocation}">
+											<f:selectItems value="#{listlocations.locationsList}" var="l" itemLabel="#{l.population}" itemValue="#{l.id}" />
+										</h:selectOneMenu>
+									</div>
+								</div>
+								<!--  <div class="form-group">
+									<label for="price">Address</label>
+									<h:inputText id="address" styleClass="form-control" value="#{findAds.address}"></h:inputText>
+								</div>-->
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-12 text-right">
+								<h:commandButton styleClass="btn btn-primary" action="#{findAds.adList}" value="Find"></h:commandButton>
+								<h:outputText value=" " />
+								<h:commandButton styleClass="btn btn-danger" action="#{findAds.setTitle('')}" value="Cancel"></h:commandButton>
+							</div>
+						</div>
+					</div>
+					<!-- </c:if> -->
+					<!-- <c:if test="#{login.logged == true}"> -->
+					<div class="col-xs-12 col-md-8 col-sm-10">
+
+						<div class="row">
+							<ui:repeat value="${findAds.adsListView}" var="nameMap">
+								<div class="col-xs-12 col-md-4 col-sm-6">
+									<div class="card w-100" style="width: 20rem;">
+										<ui:fragment rendered="#{nameMap.picture != '' and nameMap.picture != null}">
+											<h:graphicImage border="0" url="data:image/jpg;base64,#{adShow.getImage(nameMap.id)}" style="max-width:100%; max-height:100%;"/>
+										</ui:fragment>
+										<div class="card-block">
+											<h4 class="card-title">
+												<h:link outcome="showAdView" value="#{nameMap.title}">
+													<f:param name="idAd" value="#{nameMap.id}" />
+												</h:link>
+											</h4>
+											<p class="card-text">${nameMap.description}</p>
+										</div>
+										<ui:fragment rendered="#{findAds.hasLabels(nameMap.id) eq true}">
+											<div class="card-block">
+												<p class="card-text mb-2">
+													<ui:repeat value="${findAds.getAdLabels(nameMap.id)}" var="label">
+														<span class="badge badge-default">${label.text}</span>
+														<h:outputText value=" " />
+													</ui:repeat>
+												</p>
+											</div>
+										</ui:fragment>
+										<div class="card-block text-right">
+											<small class="text-muted">Price: </small><h:outputText value="${nameMap.price}">
+													<f:convertNumber type="currency" />
+												</h:outputText>
+											
+										</div>
+										<!-- 
+										<div class="card-block">
+											<c:if test="#{not findAds.isAdFavorite(nameMap.id, login.id)}">
+												<h:commandLink styleClass="card-link" action="#{addAdToFavorites.addAdToMyFavorites(nameMap.id)}" value="Add to my favorites" />
+											</c:if>
+											<c:if test="#{findAds.isAdFavorite(nameMap.id, login.id)}">
+												<h:commandLink styleClass="card-link" action="#{removeAdFromFavorites.removeAdFromMyFavorites(nameMap.id)}" value="Remove from favorites" />
+											</c:if>
+										</div>
+										 -->
+										<div class="card-footer text-muted">
+											<small>Published: <h:outputText value="${nameMap.submitted_date}">
+													<f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+												</h:outputText> - Seller Ratting: ${nameMap.user.userRatting}
+											</small>
+										</div>
+									</div>
+								</div>
+							</ui:repeat>
+						</div>
+					</div>
+					<!-- </c:if> -->
+				</div>
+				<p align="center">
+					<h:commandLink value="Return" action="indexView" />
+				</p>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

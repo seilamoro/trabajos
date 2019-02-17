@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<f:metadata>
+	<f:viewParam name="idUser" value="#{showUserRating.user_id}" />
+</f:metadata>
+<ui:composition template="./headerView.xhtml">
+<ui:define name="content"> 
+	<h:form align="left" >	
+		<h:dataTable value="#{showUserRating.userRating}" var="item" width="100%" frame="hsides" rules="all"  styleClass="table,table-bordered,table-sm" headerClass="table-inverse">
+			<f:facet name="header">			
+			<h:outputText align="center" value="Ratings for the user: " />	<h:outputText value="#{showUserRating.user.name}" />	
+			</f:facet> 
+			<h:column>
+			<f:facet name="header">
+					<h:outputText value="Sent by"/>
+				</f:facet> 
+				<h:outputText value="#{item.user_from_id.name}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Rating"/>
+				</f:facet> 
+				<div class="stars starrr" value="#{item.rating}" data-rating="#{item.rating}"></div>
+				<script>
+				$(document).on('ready', function(){
+   						 $('#input-3').rating({displayOnly: true, step: 0.5});
+				});
+				</script>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Text"/>
+				</f:facet>
+				<h:outputText value="#{item.text}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Submitted Date"/>
+				</f:facet> 
+				<h:outputText value="#{item.submitted_date}" />
+			</h:column>
+			
+		</h:dataTable>
+		<p align="center">
+			<h:commandLink value="Return" action="adListView" />
+		</p>
+	</h:form>	
+</ui:define>
+</ui:composition>
+</html>

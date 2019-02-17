@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<div id="content" class="content col-sm-8 offset-sm-2">
+			<h:form>
+
+
+				<div class="card">
+					<div class="card-header bg-primary text-white mb-3">Messages</div>
+					<div class="card-body" style="padding: 0 1.25rem;">
+						<ui:repeat value="${showUserComments.getMessages(login.nif)}" var="message">
+
+							<div class="row">
+								<div class="col-xs-12 col-md-12 col-sm-12">
+									<div class="card">
+										<div class="card-block">
+											<h4 class="card-title">
+												<h:outputText value="#{message.title}" />
+											</h4>
+											<h6 class="card-text">
+												<h:outputText value="#{message.text}" />
+											</h6>
+											<ui:fragment rendered="#{message.reply_message_id != null}">
+												<div class="card">
+													<div class="card-block">
+														<h6 class="card-text mb-2 text-muted">
+															>
+															<h:outputText value="#{message.reply_message_id.text}" />
+														</h6>
+													</div>
+												</div>
+											</ui:fragment>
+											<c:if test="#{login.isLogged()}">
+
+												<p class="text-right">
+													<h:link outcome="replyMessageView" styleClass="card-link" value="Reply">
+														<f:param name="idAd" value="#{message.ad_id.id}" />
+														<f:param name="idMessage" value="#{message.id}" />
+													</h:link>
+												</p>
+											</c:if>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</ui:repeat>
+
+						
+					</div>
+				</div>
+				<p align="center">
+					<h:commandLink value="Return" action="indexView" />
+				</p>
+
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
+

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jstl/core">
+
+
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<div id="content" class="content">
+			<label>List ads </label>
+			<h:form align="left">
+				<div class="row">
+						<!-- 
+					<div class="col-xs-12 col-md-4 col-sm-2">
+						<h:outputLabel for="">Find ads </h:outputLabel>
+						<div class="form-group">
+
+							<h:outputLabel for="title">Title</h:outputLabel>
+							<h:inputText id="title" styleClass="form-control"
+								value="#{listAds.title}"></h:inputText>
+						</div>
+						<div class="form-group">
+							<h:outputLabel for="description">Description</h:outputLabel>
+							<h:inputText id="description" value="#{listAds.description}"
+								styleClass="form-control"></h:inputText>
+						</div>
+
+							<div class="form-group">
+								<label for="price">Date</label>
+								<h:inputText id="date" styleClass="form-control" value="#{listAds.date}" ></h:inputText>
+							</div>
+							<div class="form-group">
+								<label for="price">Time</label>
+								<h:inputText id="time" styleClass="form-control" value="#{listAds.time}" ></h:inputText>
+							</div>
+							<div class="form-group">
+								<label for="price">Price</label>
+								<h:inputText id="price" styleClass="form-control" value="#{listAds.price}" ></h:inputText>
+							</div>
+							<div class="form-group">
+								<label for="price">Address</label>
+								<h:inputText id="address" styleClass="form-control" value="#{listAds.address}" ></h:inputText>
+							</div> 
+						<div class="form-group row">
+							<div class="offset-sm-2 col-sm-10 col-xs-12 text-right">
+								<h:commandButton styleClass="btn btn-primary"
+									action="#{listAds.adList}" value="Find"></h:commandButton>
+									<h:outputText value=" " />
+								<h:commandButton styleClass="btn btn-danger"
+									action="#{listAds.setTitle('')}" value="Cancel"></h:commandButton>
+							</div>
+						</div>
+					</div>
+
+						 -->
+					<div class="col-xs-12 col-md-12 col-sm-12">
+						<div class="row">
+							<div class="col-12">
+
+								<h:dataTable value="#{listAds.adsListView}" var="item" first="0" width="100%" rules="all" styleClass="table table-bordered table-sm" headerClass="table-inverse">
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="id" />
+										</f:facet>
+										<h:outputText value="#{item.id}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Title" />
+										</f:facet>
+										<h:outputText value="#{item.title}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Description" />
+										</f:facet>
+										<h:outputText value="#{item.description}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Submitted Date" />
+										</f:facet>
+										<h:outputText value="#{item.submitted_date}"/>											
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Picture" />
+										</f:facet>
+										<ui:fragment rendered="#{item.picture != '' and item.picture != null}">
+											<h:graphicImage border="0" url="data:image/jpg;base64,#{adShow.getImage(item.id)}" style="max-width:100%; max-height:50px;"/>
+										</ui:fragment>
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Status" />
+										</f:facet>
+										<h:outputText value="#{item.status}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Price" />
+										</f:facet>
+										<h:outputText value="#{item.price}" />
+									</h:column>
+									<h:column>
+										<h:link outcome="showAdView" value="View Ad">
+											<f:param name="id" value="#{item.id}" />
+										</h:link>
+										<ui:fragment rendered="#{item.status}">
+											<h:outputText value=" " />
+											<h:commandLink value="Mark as Sold" action="#{markAdAsSold.setIdAd(item.id)}" class="btn btn-danger" />
+										</ui:fragment>
+									</h:column>
+								</h:dataTable>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<p align="center">
+					<h:commandLink value="Return" action="indexView" />
+					<h:outputText value=" - " />
+					<h:commandLink value="New add" action="addAdView" />
+				</p>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

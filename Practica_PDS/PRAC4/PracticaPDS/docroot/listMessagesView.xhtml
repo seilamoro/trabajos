@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<ui:composition template="./headerView.xhtml">
+<ui:define name="content"> 
+	<h:form align="left" >	
+	<c:if test="#{login.logged and login.role == 1}">
+		<h:commandLink action="#{listMessages.previousScreen}" value="Previous" />
+		<h:outputText value="   " />
+		<h:commandLink action="#{listMessages.nextScreen}" value="Next" />		
+		<h:dataTable value="#{listMessages.messageListView}" var="item" width="100%" frame="hsides" rules="all"  styleClass="table,table-bordered,table-sm" headerClass="table-inverse">
+			<f:facet name="header">			
+			<h:outputText align="center" value="List Messages" />		
+			</f:facet> 
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Id Message"/>
+				</f:facet> 
+				<h:outputText value="#{item.id}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Title"/>
+				</f:facet> 
+				<h:outputText value="#{item.title}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Text"/>
+				</f:facet>
+				<h:outputText value="#{item.text}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Submitted Date"/>
+				</f:facet> 
+				<h:outputText value="#{item.submitted_date}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="User Id"/>
+				</f:facet> 
+				<h:outputText value="#{item.user_id.id}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Ad Id"/>
+				</f:facet> 
+				<h:link outcome="showAdView" value="#{item.ad_id.id}">
+					<f:param name="id" value="#{item.ad_id.id}" />
+				</h:link>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Reply Message Id"/>
+				</f:facet> 
+				<h:outputText value="#{item.reply_message_id.id}" />
+			</h:column>
+			<h:column>	
+				<f:facet name="header">
+					<h:outputText value="   "/>
+				</f:facet> 			
+				<h:commandButton aling="center" styleClass="btn btn-danger" action="#{removeMessage.RemoveMessage(item.id)}"  value="Delete Message">
+				</h:commandButton> 					
+			</h:column>
+		</h:dataTable>
+	</c:if>
+	<c:if test="#{not login.logged or login.role == 0}">
+		<h3>FORBIDDEN</h3>
+	</c:if>
+	</h:form>	
+</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<ui:composition template="./headerView.xhtml">
+<ui:define name="content"> 
+	<h:head> <title>Register a new Administrator</title></h:head>
+		<h:form>
+			<c:if test="#{login.logged and login.role == 1}">
+			
+			
+				<div class="container mainbox col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2 panel">
+						<fieldset>
+							<!-- Form Name -->
+							<legend>Register a new Administrator</legend>
+							<div class="form-group">
+								<label class="col-12 control-label" for="email">E-mail</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+									<h:inputText id="email" styleClass="form-control input-md" value="#{registerAdministrator.email}" required="true" requiredMessage="Enter a valid email" />
+								</div>
+							</div>
+							<!-- Password input-->
+							<div class="form-group">
+								<label class="col-12 control-label" for="passwordinput">Password</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+									<h:inputSecret id="password" styleClass="form-control input-md" value="#{registerAdministrator.password}" required="true" requiredMessage="Enter a password" />
+								</div>
+							</div>
+
+							<!-- Button -->
+							<div class="form-group">
+								<label class="col-12 control-label" for="singlebutton"></label>
+								<div class="col-12 text-center">
+									<h:commandLink styleClass="btn btn-primary" action="#{registerAdministrator.registerAdministrator}">
+										<i class="fa fa-users"></i>
+										<h:outputText value=" " />
+										<h:outputText value="Register administrator" />
+									</h:commandLink>
+								</div>
+								<div class="col-12 text-center">
+								<h:commandLink styleClass="btn btn-link" value="Cancel" action="indexView" />
+								</div>
+							</div>
+						</fieldset>
+					</div>
+			</c:if>
+			<c:if test="#{not login.logged or login.role == 0}">
+				<h3>FORBIDDEN</h3>
+			</c:if>
+		</h:form>
+</ui:define>
+</ui:composition>
+</html>

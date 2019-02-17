@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jstl/core">
+
+
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<div id="content" class="content col-sm-8 offset-sm-2">
+			<h:form enctype="multipart/form-data">
+
+				<div class="card">
+					<div class="card-header bg-primary text-white mb-3">New Ad</div>
+					<div class="card-body" style="padding: 0 1.25rem;">
+						<div class="form-group">
+							<label for="title">Title</label>
+							<h:inputText id="title" size="40" styleClass="form-control" value="#{addAd.title}" placeholder="Enter ad title"></h:inputText>
+						</div>
+						<div class="form-group">
+							<label for="description">Description</label>
+							<h:inputTextarea id="description" size="40" value="#{addAd.description}" styleClass="form-control" placeholder="Enter ad description"></h:inputTextarea>
+						</div>
+						<div class="form-group">
+							<label for="price">Price</label>
+							<h:inputText id="price" styleClass="form-control" value="#{addAd.price}" thousandSeparator="" decimalSeparator="." decimalPlaces="2"></h:inputText>
+						</div>
+
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="offset-sm-2 col-sm-10 text-right">
+						<h:commandButton styleClass="btn btn-primary" action="#{addAd.addAd}" value="Save"></h:commandButton>
+
+						<h:outputText value=" " />
+						<h:commandButton styleClass="btn btn-danger" action="indexView" value="Cancel"></h:commandButton>
+					</div>
+				</div>
+				<p align="center">
+					<h:commandLink value="Return" action="adListView" />
+				</p>
+			</h:form>
+
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

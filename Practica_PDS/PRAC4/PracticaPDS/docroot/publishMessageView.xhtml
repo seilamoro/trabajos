@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsp/jstl/core">
+<f:metadata>
+	<f:viewParam name="idAd" value="#{adShow.adId}" />
+</f:metadata>
+
+
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<div id="content" class="content col-sm-8 offset-sm-2">
+			<h:form>
+				<div class="card">
+					<div class="card-header bg-primary text-white mb-3">Publish a message</div>
+					<div class="card-body" style="padding: 0 1.25rem;">
+						<div class="card-title">
+							<h:outputLabel for="title">Ad Title:</h:outputLabel>
+							<h:outputText value=" " />
+							<h:outputLabel styleClass="form-control-static">#{adShow.dataAd.title}</h:outputLabel>
+						</div>
+						<div class="form-group">
+							<h:outputLabel for="title">Title</h:outputLabel>
+							<h:inputText type="text" styleClass="form-control" id="title" required="true" requiredMessage="Write a title" value="#{publishMessage.getMessage().title}"></h:inputText>
+						</div>
+						<div class="form-group">
+							<h:outputLabel for="titexttle">Text</h:outputLabel>
+							<h:inputTextarea type="text" rows="10" styleClass="form-control" id="text" required="true" requiredMessage="Write a text" value="#{publishMessage.getMessage().text}" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="offset-sm-2 col-sm-10 text-right">
+						<h:commandButton styleClass="btn btn-primary" action="#{publishMessage.publish(adShow.dataAd.id, login.nif, publishMessage.getMessage().title, publishMessage.getMessage().text)}" value="Save"></h:commandButton>
+
+						<h:outputText value=" " />
+						<h:commandLink value="Return" styleClass="btn btn-danger" action="showAdView">
+							<f:param name="adId" value="#{publishMessage.dataAd.id}" />
+						</h:commandLink>
+					</div>
+				</div>
+
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

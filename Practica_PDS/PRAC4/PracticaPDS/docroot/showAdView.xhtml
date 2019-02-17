@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsp/jstl/core">
+<f:metadata>
+	<f:viewParam name="idAd" value="#{adShow.adId}" />
+</f:metadata>
+
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<div id="content" class="content col-sm-8 offset-sm-2">
+			<h:form>
+				<div class="card">
+					<div class="card-header bg-primary text-white mb-3">Show Ad</div>
+					<div class="card-body" style="padding: 0 1.25rem;">
+						<div class="form-group">
+							<c:if test="#{adShow.dataAd.picture != null}">
+			   					<h:graphicImage border="0" url="data:image/jpg;base64,#{adShow.getImage(adShow.dataAd.id)}" width="200"/>
+							</c:if>
+						</div>
+						<div class="form-group row">
+							<h:outputLabel for="title" styleClass="col-sm-2 col-form-label">Title</h:outputLabel>
+							<div class="col-sm-10">
+							<h:inputText id="title" styleClass="form-control-static" value="#{adShow.dataAd.title}" placeholder="Enter ad title"></h:inputText>
+							</div>
+						</div>
+						<div class="form-group row">
+							<h:outputLabel for="description" styleClass="col-sm-2 col-form-label">Description</h:outputLabel>
+							<div class="col-sm-10">
+							<h:inputText id="description" value="#{adShow.dataAd.description}" styleClass="form-control-static" placeholder="Enter ad description"></h:inputText>
+							</div>
+						</div>
+						<div class="form-group row">
+							<h:outputLabel for="date" styleClass="col-sm-2 col-form-label">Date</h:outputLabel>
+							<div class="col-sm-10">
+								<h:outputText value="#{adShow.dataAd.submitted_date}" >
+									<f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+								</h:outputText>
+							</div>
+						</div>
+						<div class="form-group row">
+							<h:outputLabel for="price" styleClass="col-sm-2 col-form-label">Price</h:outputLabel>
+							<div class="col-sm-10">
+							<h:inputText id="price" styleClass="form-control-static" value="#{adShow.dataAd.price}" thousandSeparator="" decimalSeparator="." decimalPlaces="2"></h:inputText>
+							</div>
+						</div>
+						<div class="form-group row">
+							<h:outputLabel for="status" styleClass="col-sm-2 col-form-label">Status:  </h:outputLabel>
+							<div class="col-sm-10">
+							<b><c:if test="#{adShow.dataAd.status == true}">
+									<h:outputText value="Available" />
+								</c:if> <c:if test="#{adShow.dataAd.status == false}">
+									<h:outputText value="Sold" />
+								</c:if></b>
+								</div>
+						</div>
+						<div class="form-group row">
+							<h:outputLabel for="locked" styleClass="col-sm-2 col-form-label">Locked:  </h:outputLabel>
+							<div class="col-sm-10">
+							<b> <c:if test="#{adShow.dataAd.locked == true}">
+									<h:outputText value="Yes" />
+								</c:if> <c:if test="#{adShow.dataAd.locked == false}">
+									<h:outputText value="No" />
+								</c:if>
+							</b>
+							</div>
+						</div>
+						<c:if test="#{login.isLogged()}">
+							<div class="form-group row">
+								<h:outputLabel for="locked" styleClass="col-sm-2 col-form-label">Seller</h:outputLabel>
+								<p class="col-sm-10">
+									<h:outputText value="#{adShow.dataAd.user.name}" />
+									
+									<h:outputText value="  " />
+									<h:link outcome="showUserRatingView" styleClass="card-link" value="Show User Rating">
+										<f:param name="idUser" value="#{adShow.dataAd.user.id}" />
+									</h:link>
+									<h:outputText value=" " />
+									<h:link outcome="rateUserView" styleClass="card-link" value="Rate user">
+										<f:param name="idAd" value="#{adShow.dataAd.id}" />
+									</h:link>
+								</p>
+							</div>
+						</c:if>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="offset-sm-2 col-sm-10 text-right">
+						<c:if test="#{login.role == 1}">
+							<c:if test="#{adShow.dataAd.locked == true}">
+								<h:commandButton styleClass="btn btn-success" action="#{unlockAdd.unlockAd(adShow.dataAd.id)}" value="Unlock Ad"></h:commandButton>
+							</c:if>
+							<c:if test="#{adShow.dataAd.locked == false}">
+								<h:commandButton styleClass="btn btn-warning" action="#{lockAdd.lockAd(adShow.dataAd.id)}" value="Lock Ad"></h:commandButton>
+							</c:if>
+							<h:outputText value=" " />
+						</c:if>
+						<c:if test="#{(adShow.dataAd.status == true) and (adShow.dataAd.user.email == login.email) and (adShow.dataAd.locked == false)}">
+							<h:commandButton styleClass="btn btn-success" action="#{markAdAsSold.markAdAsSold(adShow.dataAd.id)}" value="Sold"></h:commandButton>
+							<h:outputText value=" " />
+							<c:if test="#{adShow.dataAd.picture == null}">
+								<h:commandButton styleClass="btn btn-primary" action="adImageToAdView" value="Add Image">
+									<f:param name="idAdImage" value="#{adShow.dataAd.id}" />
+								</h:commandButton>
+								<h:outputText value=" " />
+							</c:if>
+							<c:if test="#{adShow.dataAd.picture != null}">
+								<h:commandButton styleClass="btn btn-danger" action="#{removeImageFromAdd.removeImageFromAd(adShow.dataAd.id)}" value="Remove Image"></h:commandButton>
+								<h:outputText value=" " />
+							</c:if>
+							<h:commandButton styleClass="btn btn-primary" action="adLabelToAdView" value="Ad/Remove label">
+								<f:param name="idAdLabel" value="#{adShow.dataAd.id}" />
+							</h:commandButton>
+							<h:outputText value=" " />
+						</c:if>
+						<c:if test="#{login.isLogged()}">
+							<c:if test="#{adShow.isAdFavorite(login.id) == true}">
+								<h:commandButton styleClass="btn btn-danger" action="#{removeAdFromFavorites.removeAdFromMyFavorites(adShow.dataAd.id)}" value="Remove from Favorites"></h:commandButton>
+								<h:outputText value=" " />
+							</c:if>
+							<c:if test="#{adShow.isAdFavorite(login.id) == false}">
+								<h:commandButton styleClass="btn btn-success" action="#{addAdToFavorites.addAdToMyFavorites(adShow.dataAd.id)}" value="Add to Favorites"></h:commandButton>
+								<h:outputText value=" " />
+							</c:if>
+						</c:if>
+					</div>
+				</div>
+				<br />
+				<div class="card">
+					<div class="card-header bg-primary text-white mb-3">Messages</div>
+					<div class="card-body" style="padding: 0 1.25rem;">
+						<ui:repeat value="${adShow.getMessages()}" var="message">
+							<div class="row">
+								<div class="col-xs-12 col-md-12 col-sm-12">
+									<div class="card">
+										<div class="card-block">
+											<h4 class="card-title">
+												<h:outputText value="#{message.title}" />
+											</h4>
+											<h6 class="card-text">
+												<h:outputText value="#{message.text}" />
+											</h6>
+											<ui:fragment rendered="#{message.reply_message_id != null}">
+												<div class="card">
+													<div class="card-block">
+														<h6 class="card-text mb-2 text-muted">
+															>
+															<h:outputText value="#{message.reply_message_id.text}" />
+														</h6>
+													</div>
+												</div>
+											</ui:fragment>
+											<c:if test="#{login.isLogged()}">
+
+												<p class="text-right">
+													<h:link outcome="replyMessageView" styleClass="card-link" value="Reply">
+														<f:param name="idAd" value="#{message.ad_id.id}" />
+														<f:param name="idMessage" value="#{message.id}" />
+													</h:link>
+												</p>
+											</c:if>
+										</div>
+									</div>
+								</div>
+							</div>
+						</ui:repeat>
+					</div>
+				</div>
+				<c:if test="#{login.isLogged()}">
+					<div class="row">
+						<div class="col-sm-12 text-right">
+							<h:link styleClass="btn btn-info" outcome="publishMessageView" value="Send a message">
+								<f:param name="idAd" value="#{adShow.dataAd.id}" />
+							</h:link>
+							<br />
+						</div>
+					</div>
+				</c:if>
+				<p align="center">
+					<h:commandLink value="Return" action="adListView" />
+				</p>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

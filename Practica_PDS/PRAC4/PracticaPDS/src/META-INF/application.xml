@@ -1,0 +1,13 @@
+<application>
+  <display-name>PracticaPDS</display-name>
+  <module>
+    <web>
+      <web-uri>PracticaPDS.war</web-uri>
+      <context-root>/PracticaPDS</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>PracticaPDS.jar</ejb>
+  </module>
+</application>
+

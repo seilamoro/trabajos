@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:body>  
+	<f:metadata>
+		<f:viewParam name="user" value="#{login.email}"></f:viewParam>
+	</f:metadata>
+	<p align="left"/><h:outputText value="Bienvenido: " aling="right"/>
+	<h:outputText value="#{login.email}" aling="right"/>
+	 
+  	<div id="content" class="content" align="center">
+	<label ><b>Panel de Administración</b></label>
+	  <h:form align="left" >
+	  <table bgcolor="#F1F1F1" border="10" width="100%" frame="hsides" rules="all">
+		  <tr>
+		 	<td><h:link value="Gestionar Etiquetas" outcome="listLabelsView"></h:link></td>
+		  	<td><h:link value="Gestionar Anuncios" outcome="listAllAddsView"></h:link></td>
+		  </tr>
+	  </table>
+ 	  </h:form>	
+ 	  </div>	
+   </h:body>
+</html>

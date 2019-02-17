@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Login User</title>
+</h:head>
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<h:body>
+			<h:form>
+				<div class="container mainbox col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2 panel">
+					<fieldset>
+						<!-- Form Name -->
+						<legend>Login</legend>
+						<div class="form-group">
+							<label class="col-12 control-label" for="email">E-mail</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+								<h:inputText id="email" styleClass="form-control input-md" value="#{login.email}" required="true" requiredMessage="Enter a valid email" />
+							</div>
+						</div>
+						<!-- Password input-->
+						<div class="form-group">
+							<label class="col-12 control-label" for="passwordinput">Password</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+								<h:inputSecret id="pwd" styleClass="form-control input-md" value="#{login.pwd}" required="true" requiredMessage="Enter a password" />
+							</div>
+						</div>
+
+						<!-- Button -->
+						<div class="form-group">
+							<label class="col-12 control-label" for="singlebutton"></label>
+							<div class="col-12 text-center">
+								<h:commandLink styleClass="btn btn-primary" action="#{login.doLogin(login.email, login.pwd)}">
+									<i class="fa fa-sign-in"></i>
+									<h:outputText value=" " />
+									<h:outputText value="Login" />
+								</h:commandLink>
+								<h:outputText value=" " />
+								<h:commandLink styleClass="btn btn-success" action="#{login.registerUser}" immediate="true">
+									<i class="fa fa-user-plus"></i>
+									<h:outputText value=" " />
+									<h:outputText value="Register new User" />
+								</h:commandLink>
+								<h:outputText value=" " />
+								
+							</div>
+							<div class="col-12 text-center">
+							<h:commandLink styleClass="btn btn-link" value="Cancel" immediate="true" action="indexView" />
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>

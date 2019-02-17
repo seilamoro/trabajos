@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+<f:metadata>
+	<f:viewParam name="idUser" value="#{findMyFavorites.userId}" />
+	<f:viewParam name="user" value="#{findMyFavorites.dataUser}" />
+</f:metadata>
+
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<div id="content" class="content" align="center">
+			<label>My Favorites Ads </label>
+			<h:form align="left">
+				<!-- <h:commandLink action="#{findMyFavorites.previousScreen}" value="Previous" />
+				<h:outputText value=" / " />
+				<h:commandLink action="#{findMyFavorites.nextScreen}" value="Next" /> -->
+				<h:dataTable value="#{findMyFavorites.adFavoritesListView}" var="item" first="0" width="100%" rules="all" styleClass="table,table-bordered,table-sm" headerClass="table-inverse">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="id" />
+						</f:facet>
+						<p align="right">
+							<h:outputText value="#{item.id}" />
+						</p>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Title" />
+						</f:facet>
+						<h:outputText value="#{item.title}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Description" />
+						</f:facet>
+						<h:outputText value="#{item.description}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Submitted_Date" />
+						</f:facet>
+						<h:outputText value="#{item.submitted_date}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Picture" />
+						</f:facet>
+						<ui:fragment rendered="#{item.picture != '' and item.picture != null}">
+							<h:graphicImage border="0" url="data:image/jpg;base64,#{adShow.getImage(item.id)}" style="max-width:100%; max-height:50px;" />
+						</ui:fragment>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Price" />
+						</f:facet>
+						<h:outputText value="#{item.price}" />
+					</h:column>
+					<h:column>
+						<h:link outcome="showAdView" value="View Ad">
+							<f:param name="id" value="#{item.id}" />
+						</h:link>
+					</h:column>
+					<h:column aling="center">
+						<h:commandButton aling="center" styleClass="btn btn-danger" action="#{removeAdFromFavorites.removeAdFromFavorites()}" value="Delete Ad" />
+					</h:column>
+				</h:dataTable>
+				<p align="center">
+					<h:commandLink value="Return" action="indexView" />
+				</p>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
