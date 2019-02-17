@@ -1,0 +1,406 @@
+<?
+if (isset($_GET['imprimir'])){
+SESSION_START();
+}
+?>
+<SCRIPT LANGUAGE="JavaScript">
+			  function imprimir() // Función que imprime la página que llama a la función
+				  {
+					   version = parseInt(navigator.appVersion);
+					   if (version >= 4)
+						 window.print();
+				  }
+</SCRIPT>
+<?
+
+		function formatearFecha($fechaOriginal)
+		{
+		$fechaNueva=split("-",$fechaOriginal);
+		//$fechaNueva=$fechaNueva[2]."-".$fechaNueva[1]."-".$fechaNueva[0];
+		$fechaNueva=$fechaNueva[2]."-".$fechaNueva[1];
+		return $fechaNueva;
+		}
+	$i=0;
+	$con_filas = 1;
+	@$db=mysql_pconnect($_SESSION['conexion']['host'],$_SESSION['conexion']['user'],$_SESSION['conexion']['pass']);
+    if(!$db)
+		{
+    	echo "Error : No se ha podido conectar a la base de datos";
+    	exit;
+	    }
+    mysql_select_db($_SESSION['conexion']['db']);
+    
+    $fecha_hoy=date("Y-m-d");
+   
+  ?> <!--<center>--><label style='color:#477CB0;text-align:center;font-family:Verdana;font-size:18px;font-weight:bold;'> Distribución Habitaciones <?echo date("d-m-Y")?></label>
+   <?
+
+$query_habitaciones="SELECT * FROM tipo_habitacion INNER JOIN (SELECT consulta2.Fecha,consulta2.Id_Hab,consulta2.Id_Tipo_Hab,habitacion.Camas_Hab FROM habitacion INNER JOIN (SELECT cambio_tipo_habitacion.Id_Tipo_Hab,consulta.Id_Hab,consulta.Fecha FROM cambio_tipo_habitacion INNER JOIN (SELECT Id_Hab, MAX(Fecha) as Fecha FROM cambio_tipo_habitacion WHERE Fecha <= '" . date('Y-m-d') . "' GROUP BY Id_Hab) AS consulta ON cambio_tipo_habitacion.Fecha=consulta.Fecha AND cambio_tipo_habitacion.Id_Hab=consulta.Id_Hab) AS consulta2 ON habitacion.Id_Hab=consulta2.Id_Hab) AS consulta3 ON consulta3.Id_Tipo_Hab=tipo_habitacion.Id_Tipo_Hab where camas_hab <> -1 and tipo_habitacion.Nombre_Tipo_Hab <> 'Aula'";
+
+
+   $result_habitaciones= mysql_query($query_habitaciones);
+   $num_results_habitaciones=mysql_num_rows($result_habitaciones);
+   if($num_results_habitaciones>0){
+     
+     		//Para Cada habitación hacer las consultas
+     		for($j=0;$j<$num_results_habitaciones;$j++)
+     		{
+			   $fila_habitaciones=mysql_fetch_array($result_habitaciones);
+			   $habitaciones[$j]['Id_Hab']=$fila_habitaciones['Id_Hab'];
+			   $habitaciones[$j]['camas']=$fila_habitaciones['Camas_Hab'];
+			   $habitaciones[$j]['Id_Tipo_Hab']=$fila_habitaciones['Id_Tipo_Hab'];
+			}
+			
+			foreach ($habitaciones as $llave => $fila) {
+    				$id[$llave]  = $fila['Id_Hab'];
+    				$tipo[$llave] = $fila['Id_Tipo_Hab'];
+    			
+					}
+
+			
+			if (COUNT($habitaciones) > 0) 
+			{		
+				@ ARRAY_MULTISORT($tipo, SORT_ASC, $id, SORT_ASC, $habitaciones);		
+			}
+			$tipoactual=$habitaciones[0]['Id_Tipo_Hab'];
+
+			$ancho_nombre = 15;
+			
+			for($j=0;$j<count($habitaciones);$j++)
+			{  
+				$filas_hab = 0;
+			   if ($habitaciones[$j]['camas'] / 4 < 5){
+				   $filas_hab = 2;
+			   }else{
+				   $filas_hab = $habitaciones[$j]['camas'] / 4;
+				}
+
+				$ancho_col = 135;
+				
+			   $con_filas += $filas_hab;
+
+			   $query_peregrino="select DNI_Cl,Fecha_Llegada,Fecha_Salida,Noches_Pagadas,Id_Hab  from pernocta_p where  fecha_llegada<='".$fecha_hoy."' and Fecha_Salida>'".$fecha_hoy."' and Id_Hab='".$habitaciones[$j]['Id_Hab']."' order by Id_Hab ASC,Fecha_Salida ASC;";
+    			$result_peregrino = mysql_query($query_peregrino); 	    	
+				$num_results_pernoctas_pereg=mysql_num_rows($result_peregrino);
+				
+				
+				$query_alberguista="select * from pernocta where Fecha_Llegada<='".$fecha_hoy."' and Fecha_Salida>'".$fecha_hoy."' and Id_Hab='".$habitaciones[$j]['Id_Hab']."'";
+				$result_alberguistas = mysql_query($query_alberguista); 	    	
+				$num_results_pernoctas_alb=mysql_num_rows($result_alberguistas);		
+								
+				$query_grupo="select pernocta_gr.Id_Hab,pernocta_gr.Num_Personas,estancia_gr.PerNocta,estancia_gr.Id_Color,estancia_gr.Fecha_Llegada,estancia_gr.Fecha_Salida,estancia_gr.Ingreso,estancia_gr.Noches_Pagadas,estancia_gr.Nombre_Gr from pernocta_gr inner join estancia_gr on pernocta_gr.Nombre_Gr=estancia_gr.Nombre_Gr where estancia_gr.Fecha_Llegada<='".$fecha_hoy."' and estancia_gr.Fecha_Salida>'".$fecha_hoy."' and pernocta_gr.Id_Hab='".$habitaciones[$j]['Id_Hab']."' and estancia_gr.Fecha_llegada=pernocta_gr.Fecha_Llegada order by estancia_gr.Fecha_Salida ASC ";
+				$result_grupo=mysql_query($query_grupo);
+				$num_results_pernoctas_grupo=mysql_num_rows($result_grupo);
+				$fila_grupos=mysql_fetch_array($result_grupo);
+				
+				$query_color="select * from colores where Id_Color='".$fila_grupos['Id_Color']."';";
+				$result_color=mysql_query($query_color);
+				$num_results_color=mysql_num_rows($result_color);
+				$fila_color=mysql_fetch_array($result_color);
+				/*echo "color:".$fila_color['Color'];*/
+				
+				$query_reserva1="select reserva.*,detalles.*, pra.* from reserva INNER JOIN detalles ON reserva.DNI_PRA=detalles.DNI_PRA && reserva.Fecha_Llegada = detalles.Fecha_Llegada INNER JOIN pra ON detalles.DNI_PRA = pra.DNI_PRA where detalles.Fecha_Llegada<='".$fecha_hoy."' and detalles.Fecha_Salida>'".$fecha_hoy."' and reserva.Id_Hab='".$habitaciones[$j]['Id_Hab']."'";
+
+				$result_reserva1=mysql_query($query_reserva1);
+				$num_results_pernoctas_reserva1=mysql_num_rows($result_reserva1);
+							   
+			  $i=1; 
+			   
+			   
+			   if (isset($_GET['imprimir'])){
+			   
+			   ?>
+			   
+			   	<link rel="stylesheet" type="text/css" href="../css/estilos_tablas.css">
+				<link rel="stylesheet" type="text/css" href="../css/habitaciones.css">
+				<link rel="stylesheet" type="text/css" href="../css/hoja_formularios.css">
+				<link rel="stylesheet" type="text/css" href="../css/estructura_alb_per.css">
+				<link rel="stylesheet" type="text/css" href="../css/habitacionesColores.css">
+				<?
+				}
+								if(!($tipoactual==$habitaciones[$j]['Id_Tipo_Hab']))
+					{
+					  $tipoactual = $habitaciones[$j]['Id_Tipo_Hab'];
+					  print("&nbsp;");
+					  $con_filas++;
+
+					
+					$con_filas1 = $con_filas - $filas_hab;
+					for($j1 = $j+1; $j1 < count($habitaciones) && $habitaciones[$j1]['Id_Tipo_Hab'] == $tipoactual; $j1++){  
+						$filas_hab1 = 0;
+						if ($habitaciones[$j1]['camas'] / 4 < 5)
+						   $filas_hab1 = 2;
+					    else
+						   $filas_hab1 = $habitaciones[$j1]['camas'] / 4;
+
+					    $con_filas1 += $filas_hab1;
+
+					}
+
+					if($con_filas1 > 38){
+						echo "<p><font size='2.5'>";
+						for($fil = $con_filas-$filas_hab; $fil <= 38; $fil++)
+							echo "<br>&nbsp;";
+						$con_filas = $filas_hab; 
+						echo "</font></p>";
+					}	
+						
+
+
+					}?>
+			   
+			<table border=0  style="font-family:Verdana;font-size:7;text-align:center;background-color: #FFFFFF;" cellpadding="0" cellspacing="0">
+					<?
+						if($con_filas > 38){
+							echo "<tr><td>";
+							for($fil = $con_filas-$filas_hab; $fil <= 38; $fil++)
+								echo "<p>&nbsp;</p>";
+							echo "</td></tr>";
+							$con_filas = $filas_hab; 
+						}		
+					?>
+					
+				<tr style="padding:0px 0px 0px 0px;background-color: #FFFFFF;">
+					<td width="30px" bordercolor="#3F7BCC" height="50px" valign="top" style='color:#477CB0;text-align:center;font-family:Verdana;font-size:12px;font-weight:bold;' rowspan="<?=($habitaciones[$j]['camas']);?>">
+					
+					<table width="30px" height="100%" border="0" style="border: 1px solid #3F7BCC;"><tr style="padding:0px 0px 0px 0px;background-color: #FFFFFF;"><td style='color:#477CB0;text-align:center;font-family:Verdana;font-size:12px;font-weight:bold;'>
+					<?=substr($habitaciones[$j]['Id_Hab'],0,2)?>
+					</td></tr></table>
+					
+					
+					</td>
+				
+			   		<td  valign="top" width="600px">
+					
+			   <table border=1 style="border: 1px solid #3F7BCC;" width="100%;" height="100%" frame="void" cellpadding="0" cellspacing="0">	   		
+			   			<tr>				
+			   				<?
+							$cama=0;
+							$i = 0;
+							   //Mostrar Peregrinos
+							   
+							   
+							   
+								if($num_results_pernoctas_pereg>0){
+								
+									for($k=0;$k<$num_results_pernoctas_pereg;$k++){
+										$fila_pernoctas=mysql_fetch_array($result_peregrino);
+										$dni_cl=$fila_pernoctas['DNI_Cl'];
+										$query_cliente="select * from cliente where DNI_Cl='".$dni_cl."';";
+										$result_cliente = mysql_query($query_cliente); 	    	
+										$num_results_cliente=mysql_num_rows($result_cliente);												
+										$fila_cliente=mysql_fetch_array($result_cliente);
+										if(isset($dni_cl)){
+										
+											
+											if($i == 4){
+											
+												$i = 0;
+											?>
+												</tr><tr>  
+											<?
+											}
+											?>
+											
+											<td  style="font-size:7px;width:<?=$ancho_col?>px;" valign="top">
+											<table border=0 style="font-family:Verdana;font-size:7px;" cellpadding="0" cellspacing="0">
+											
+											<?	
+											$nomb_cli = $fila_cliente['Nombre_Cl']." ".$fila_cliente['Apellido1_Cl']." ".$fila_cliente['Apellido2_Cl'];
+											print("<tr><td colspan='2' align='left'><b>".substr($nomb_cli,0,$ancho_nombre)."</b></td></tr>");
+											print("<tr><td align='left' width='105px'>".formatearFecha($fila_pernoctas['Fecha_Llegada'])." </td><td align='left' width='105px'> ".formatearFecha($fila_pernoctas['Fecha_Salida'])."</td></tr></table></td>");
+											$i++;
+											$cama++;
+
+										}										
+									}	
+										 
+								}
+
+
+
+
+								//Mostrar Grupos
+								if($num_results_pernoctas_grupo>0){
+								
+									for($m=0;$m<$num_results_pernoctas_grupo;$m++){
+										if(isset($fila_grupos['Nombre_Gr'])){
+											for($g=0;$g<$fila_grupos['Num_Personas'];$g++){
+												
+												if($i == 4){
+													$i = 0;
+												?>
+													</tr><tr>  
+												<?
+												}
+												?>
+													
+												<td  style="font-size:7px;width:<?=$ancho_col?>px;" valign="top">
+												<table border=0 style="font-family:Verdana;font-size:7px;" cellpadding="0" cellspacing="0">
+												<?
+												$cama++;
+												print("<tr><td align='left' colspan='2' style='background-color:".$fila_color['Color'].";'>&nbsp;</td>");
+												if($fila_grupos['Ingreso']==0){
+													print("<td align='left' width='50px'>&nbsp;</td>");
+												}else {
+													print("<td align='left' width='50px'>".$fila_grupos['Ingreso']."€</td>");  
+												}
+												print("</tr><tr><td align='left' width='60px' >".formatearFecha($fila_grupos['Fecha_Llegada'])."</td><td align='left' width='60px'>".formatearFecha($fila_grupos['Fecha_Salida'])."</td><td align='left' width='60px'> ".$fila_grupos['Noches_Pagadas']."/".$fila_grupos['PerNocta']."</td></tr></table></td>");
+												$i++;
+												
+												
+											}
+										}
+										$camas += $fila_grupos['Num_Personas'];
+									}
+								
+								}	
+							
+							
+								//Mostrar Alberguistas
+								if($num_results_pernoctas_alb>0){
+								
+									for($l=0;$l<$num_results_pernoctas_alb;$l++){
+										$fila_pernoctas=mysql_fetch_array($result_alberguistas);
+										$dni_cl=$fila_pernoctas['DNI_Cl'];
+										
+										$query_cliente="select * from cliente where DNI_Cl='".$dni_cl."'";
+										$result_cliente = mysql_query($query_cliente); 
+										$num_results_cliente=mysql_num_rows($result_cliente);												
+										$fila_cliente=mysql_fetch_array($result_cliente);
+										
+										if(isset($dni_cl)){
+											if($i == 4){
+												$i = 0;
+											?>
+												</tr><tr>  
+											<?
+											}
+											?>
+											<td  style="font-size:7px;width:<?=$ancho_col?>px;" valign="top">
+											<table border=0 style="font-family:Verdana;font-size:7px;" cellpadding="0" cellspacing="0">
+											<?
+											
+											$nomb_cli = $fila_cliente['Nombre_Cl']." ".$fila_cliente['Apellido1_Cl']." ".$fila_cliente['Apellido2_Cl'];
+											print("<tr><td colspan='2' align='left'><b>".substr($nomb_cli,0,$ancho_nombre)."</b></td>");
+											if($fila_pernoctas['Ingreso']==0){
+												print("<td align='left' width='50px'>&nbsp</td>");
+											}else{
+												print("<td align='left' width='50px'> ".$fila_pernoctas['Ingreso']."€</td>");
+											}												
+											print("</tr><tr><td align='left' width='60px'> ".formatearFecha($fila_pernoctas['Fecha_Llegada'])."</td><td align='left' width='60px'>".formatearFecha($fila_pernoctas['Fecha_Salida'])."</td><td align='left' width='60px'>".$fila_pernoctas['Noches_Pagadas']."/".$fila_pernoctas['PerNocta']."</td></tr></table></td>");
+  											$i++;
+											$cama++;
+										}				  	
+									}
+								}
+								
+								//Mostrar Reservas
+								if($num_results_pernoctas_reserva1>0){
+									for($n=0;$n<$num_results_pernoctas_reserva1;$n++){
+										$fila_reserva1=mysql_fetch_array($result_reserva1);
+										
+										if(isset($fila_reserva1['Nombre_PRA'])){
+											for($g=0;$g<$fila_reserva1['Num_Camas'];$g++){
+												if($i == 4){
+													$i = 0;
+												?>
+													</tr><tr>  
+												<?
+												}
+												?>
+												<td  style="font-size:7px;width:<?=$ancho_col?>px;" valign="top">
+												<table border=0 style="font-family:Verdana;font-size:7px;" cellpadding="0" cellspacing="0">
+												<?
+												
+												$nomb_cli = $fila_reserva1['Nombre_PRA']." ".$fila_reserva1['Apellido1_PRA']." ".$fila_reserva1['Apellido2_PRA'];
+												print("<tr><td colspan='2' align='left'><b>".substr($nomb_cli,0,$ancho_nombre)."</b></td>");
+												if($fila_reserva1['Ingreso']==0){
+													print("<td align='left' width='50px' >&nbsp</td>");
+												}else {
+													print("<td align='left' width='50px' > ".$fila_reserva1['Ingreso']."€</td>");
+												}
+												print("</tr><tr><td align='left' width='60px'>".formatearFecha($fila_reserva1['Fecha_Llegada'])."</td><td align='left' width='60px'>".formatearFecha($fila_reserva1['Fecha_Salida'])."</td>");
+												print("<td align='left 'width='60px'>".substr($fila_reserva1['Tfno_PRA'],0,9)."</td></tr></table></td>");
+												?>
+												<?
+												$i++;
+												$cama++;
+											}
+										}	    	
+									}									
+								}
+
+									
+									
+									for($p=$cama;$p<$habitaciones[$j]['camas'];$p++){	
+										
+											if($i == 4){
+												$i = 0;
+											?>
+												</tr><tr>  
+											<?
+											}
+											?>
+					
+											<td height="25px" style="font-family:Verdana;font-size:7px;width:<?=$ancho_col?>px;">
+											<table border=0 style="font-family:Verdana;font-size:7px;" cellpadding="0" cellspacing="0">
+												<tr>
+													<td colspan='2' align='left'>&nbsp;</td>
+													<td align='left' width='50px'>&nbsp;</td>
+												</tr>
+												<tr>
+													<td align='left' width='60px'>&nbsp;</td>
+													<td align='left' width='60px'>&nbsp;</td>
+													<td align='left' width='60px'>&nbsp;</td>
+												</tr>
+											</table>	
+											</td> 
+								<?
+										$i++;
+									}
+									if($habitaciones[$j]['camas'] >4 && $i < 4){
+									?>
+									<td height="25px" bgcolor="#C0C0C0" colspan="<?=(4-$i)?>" style="font-family:Verdana;font-size:7px;width:<?=$ancho_col?>px;">
+											<table  border=0 style="font-family:Verdana;font-size:7px;" cellpadding="0" cellspacing="0">
+												<tr>
+													<td colspan='2' align='left'>&nbsp;</td>
+													<td align='left' width='50px'>&nbsp;</td>
+												</tr>
+												<tr>
+													<td align='left' width='60px'>&nbsp;</td>
+													<td align='left' width='60px'>&nbsp;</td>
+													<td align='left' width='60px'>&nbsp;</td>
+												</tr>
+											</table>	
+											</td>
+									
+									<?
+									}
+								?>
+								</tr> 
+							</table>
+							 </td>
+			   			</tr>
+					</table>
+			   			</td>
+			   			
+			   		</tr>			   		
+			   		<?}?>
+			   </table>			   
+			   <?
+			}
+  
+if (isset($_GET['imprimir'])){?>
+	<script>
+	//Llamada a la función imprimir que imprimirá la página
+	 imprimir();
+    </script>
+
+<?}
+mysql_close($db);
+?>    
+	
+   
+  
+
