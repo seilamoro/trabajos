@@ -1,0 +1,25 @@
+
+/*Espacio en el que se encuentran los botones del menu*/
+.fondo_menu{
+	/*background-image: url(../imagenes/fondos/fondo_menu.gif);	/*imagen de fondo*/
+	position:relative;
+	top:490px;  
+	left:860px;
+	width:80px;
+	height:30px;
+	border:0px solid blue;
+}
+
+.texto_entrar{
+  	font-family: "Courier", "Times New Roman", Times, serif;
+	font-size:20 px;
+	font-weight:bold;
+	color: #A7A06D;
+	margin:5px;
+	text-align:center;
+	margin-top:15px;
+	border:0px solid blue;
+	text-decoration: none;
+}
+
+

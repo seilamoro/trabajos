@@ -1,0 +1,366 @@
+
+table.listados {
+ background: #fff;
+ margin: 0;
+ padding: 0;
+ border: none; 
+ border-collapse: collapse;
+ font: 10px Verdana;
+}
+
+table.listados thead, tfoot, tbody, tr, th, td { 
+ padding: 5px;
+}
+
+table.listados th {
+ font-size: 14px;
+ font-family: Georgia;
+ letter-spacing: 2px;
+}
+
+table.listados td {
+ font-size: 15px;
+}
+
+table.listados caption {
+ text-align: center;
+ font-size: 18px;
+ font-family: Georgia;
+ padding: 0 0 10px 15px;
+}
+
+table.listados thead tr th {
+ margin:0;
+ padding:0; 
+ color: #747450;
+ background-color: #e6e3b6;
+ font-variant: small-caps;
+ font-size: 14px;
+}
+
+table.listados thead a.nombre div, table.listados thead a.nombre:visited div, table.listados thead a.nombre:hover div {
+ margin:0;
+ padding:5px 0 5px 0; 
+ color: #747450;
+ text-decoration: none;
+}
+
+table.listados thead a.nombre:hover div {
+ color: #434235;
+}
+
+table.listados thead div.borde {
+ height:55px;
+ width:8px;
+ background: #e6e3b6 url(./../imagenes/botones/thead_fondo_borde.gif) no-repeat left top;
+ float:left;
+}
+
+table.listados thead th.titulo {
+ background: #e6e3b6 url(./../imagenes/botones/thead_fondo_centro.gif) repeat-x top;
+}
+
+table.listados thead th.boton {
+ background: #e6e3b6 url(./../imagenes/botones/thead_fondo_centro.gif) repeat-x top;
+ text-align: center;
+ letter-spacing: 0px;
+ font-size: 12px;
+}
+
+table.listados thead div.centro {
+ padding:0 10px 0 0; 
+ text-align: left;
+ float:left;
+}
+
+table.listados thead a.boton div.boton, table.listados thead a.boton:visited div.boton, table.listados thead a.boton:hover div.boton {
+ padding: 15px 0 0 0;
+}
+
+table.listados a.boton div.boton, table.listados a.boton:visited div.boton, table.listados a.boton:hover div.boton {
+ text-align:center;
+ border: none;
+ text-decoration: none;
+ color: #747450;
+}
+
+table.listados a.boton:hover div.boton {
+ color: #434235;
+}
+
+/* Bordes de las tablas y floats de los divs*/
+
+#borde_i {
+ border-left: 1px solid #a19f7f;
+}
+
+#borde_d {
+ border-right: 1px solid #a19f7f;
+}
+
+#borde_b {
+ border-bottom: 1px solid #a19f7f;
+}
+
+#borde_ib {
+ border-bottom: 1px solid #a19f7f;
+ border-left: 1px solid #a19f7f;
+}
+
+#borde_id {
+ border-right: 1px solid #a19f7f;
+ border-left: 1px solid #a19f7f;
+}
+
+#borde_db {
+ border-bottom: 1px solid #a19f7f;
+ border-right: 1px solid #a19f7f;
+ border-left: 0px;
+ border-top: 0px;
+}
+
+#borde_idb {
+ border-bottom: 1px solid #a19f7f;
+ border-right: 1px solid #a19f7f;
+ border-left: 1px solid #a19f7f;
+}
+
+#fleft {
+ float: left;
+}
+
+#fright {
+ float: right;
+}
+
+/* Fin bordes de las tablas */
+
+table.listados tbody a tr td, tbody a:visited tr td, tbody a:hover tr td {
+ height: 33px;
+ background:url(./../imagenes/botones/tbody_fondo_td.gif) right;
+ background-repeat:repeat-x;
+ padding: 0 0 0 12px;
+}
+
+table.listados tbody a:hover tr td {
+ cursor:default;
+ background:url(./../imagenes/botones/tbody_fondo_td_hover.gif) right;
+ background-repeat:repeat-x;
+}
+
+table.listados tbody tr.accion td.accion {
+ height: 33px;
+ background:url(./../imagenes/botones/tbody_fondo_td.gif) right;
+ background-repeat:repeat-x;
+ padding: 0 0 0 12px;
+}
+
+table.listados a.boton2 div.boton, table.listados a.boton2:visited div.boton, table.listados a.boton2:hover div.boton {
+ text-align:center;
+ border: none;
+ text-decoration: none;
+ color: #888;
+}
+
+table.listados a.boton2:hover div.boton {
+ color: #222;
+}
+
+table.listados div.opciones:hover, table.listados div.opciones {
+ text-align: center;
+ cursor:pointer;
+}
+
+table.listados th.blanco {
+ height: 0px;
+ background-color:d1cea5;
+}
+
+table.listados tfoot {
+ cursor: default;
+ color: #888;
+ height: 30px;
+}
+
+table.listados tfoot th {
+ text-align: left;
+}
+
+table.listados tfoot th.paginas {
+ text-align: left;
+}
+
+table.listados tfoot th.paginas span {
+ float: right;
+}
+
+table.listados tfoot th.paginas a.noseleccionada, tfoot th.paginas a.noseleccionada:visited, tfoot th.paginas a.noseleccionada:hover {
+ color: #888;
+ text-decoration: none;
+}
+
+table.listados a.seleccionada, tfoot a.seleccionada:visited, tfoot a.seleccionada:hover {
+ color: #222;
+ text-decoration: none;
+}
+
+table.listados tfoot tr th a.papelera div.papelera, table.listados tfoot tr th a.papelera:visited div.papelera, table.listados tfoot tr th a.papelera:hover div.papelera  {
+ float:left;
+ width:22px;
+ cursor:pointer;
+ height:22px;
+ background: url(./../imagenes/botones/papelera.gif) no-repeat;
+}
+
+table.listados tfoot tr th a.papelera:hover div.papelera {
+ background: url(./../imagenes/botones/papelera_hover.gif) no-repeat;
+}
+
+table.listados tfoot tr th a.volver div.volver, table.listados tfoot tr th a.volver:visited div.volver, table.listados tfoot tr th a.volver:hover div.volver  {
+ float:left;
+ width:35px;
+ cursor:pointer;
+ height:22px;
+ background: url(./../imagenes/botones/volver.gif) no-repeat;
+}
+
+table.listados tfoot tr th a.volver:hover div.volver {
+ background: url(./../imagenes/botones/volver_hover.gif) no-repeat;
+}
+
+table.listados tfoot th.paginas a.noseleccionada:hover {
+ color: #222;
+}
+
+table.listados input.tresultados {
+ text-align: right;
+}
+
+check {
+ font-family: "Lucida Sans Unicode"; 
+ font-size: 18px;
+ color: #699;
+ cursor: default;
+ width: 26px;
+ text-align: center;
+}
+
+/* Estilos de los menus */
+
+a.confirmar_aceptar td, a.confirmar_aceptar:visited td, a.confirmar_aceptar:hover td {
+ background:url(./../imagenes/botones/tbody_fondo_td_aceptar.gif);
+ cursor:pointer;
+}
+
+a.confirmar_aceptar:hover td {
+ background:url(./../imagenes/botones/tbody_fondo_td_aceptar_hove.gif);
+}
+
+a.confirmar_cancelar td, a.confirmar_cancelar:visited td, a.confirmar_cancelar:hover td {
+ background:url(./../imagenes/botones/tbody_fondo_td_cancelar.gif);
+ cursor:pointer;
+}
+
+a.confirmar_cancelar:hover td {
+ background:url(./../imagenes/botones/tbody_fondo_td_cancelar_hov.gif);
+}
+
+a.confirmar_aceptar th, a.confirmar_aceptar:visited th, a.confirmar_aceptar:hover th {
+ background:url(./../imagenes/botones/tfoot_fondo_td_aceptar.gif) no-repeat;
+ cursor:pointer;
+}
+
+a.confirmar_aceptar:hover th {
+ background:url(./../imagenes/botones/tfoot_fondo_td_aceptar_hove.gif) no-repeat;
+}
+
+a.confirmar_cancelar th, a.confirmar_cancelar:visited th, a.confirmar_cancelar:hover th {
+ background:url(./../imagenes/botones/tfoot_fondo_td_cancelar.gif) no-repeat;
+ cursor:pointer;
+}
+
+a.confirmar_cancelar:hover th {
+ background:url(./../imagenes/botones/tfoot_fondo_td_cancelar_hov.gif) no-repeat;
+}
+
+div.item {
+	float:left;
+	height:26px;
+	background:url(./../imagenes/botones/menu_fondo.gif) repeat-x;
+	cursor:pointer;
+	font-size:20px;
+	font-weight: bold;
+}
+
+div.item_izq {
+	float:left;
+	width:4px;
+	height:26px;
+	background:url(./../imagenes/botones/menu_borde_izq.gif) no-repeat;
+}
+
+div.item_der {
+	float:left;
+	width:4px;
+	height:26px;
+	background:url(./../imagenes/botones/menu_borde_der.gif) no-repeat;
+}
+
+div.item_esquina {
+	float:left;
+	width:6px;
+	height:5px;
+	background:url(./../imagenes/botones/menu_esquina.gif) no-repeat;
+}
+
+/* Fin Estilos de los menus */
+
+
+/* Estilos de los checkbox */
+
+div.checkbox {
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
+	clear: both;
+}
+
+div.checkbox div {
+	background-repeat: no-repeat;
+}
+
+div.checkbox div input {
+	display: none;
+}
+
+.checked {
+	background: url('./../imagenes/botones/checked.gif');
+}
+
+.unchecked {
+	background: url('./../imagenes/botones/unchecked.gif');
+}
+
+.checked2 {
+	background: url('./../imagenes/botones/checked2.gif');
+}
+
+.unchecked2 {
+	background: url('./../imagenes/botones/unchecked2.gif');
+}
+.disabled {
+	background: url('./../imagenes/botones/unchecked.gif');
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=30);
+	width: 100%;
+	-moz-opacity: 0.3;
+	opacity: 0.3;
+	cursor: default;
+}
+
+/* Fin Estilos de los checkbox */
+
+
+
+
+
+

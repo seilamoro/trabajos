@@ -1,0 +1,60 @@
+BODY {
+	COLOR: #706161;
+	text-decoration:none;
+}
+A.:link {
+	COLOR: #706161;
+	text-decoration:none;	
+}
+A:visited {
+	COLOR:#706161;
+	text-decoration:none;		
+}
+A:hover {
+	COLOR: #988E8E;
+	text-decoration:none;	
+}
+
+.bar{
+  	background-image: 'url(../imagenes/menu/grandeselec.gif)';
+	FONT-SIZE: 9pt; 
+	line-height:35px;
+	WIDTH: 150px; 
+	text-align:center;
+	FONT-FAMILY: "Georgia", "Times New Roman", Times, serif;
+	POSITION: absolute; 
+	TOP: 15px; 
+	HEIGHT: 41px; 	
+	font-weight:bold;
+	color: #706161;
+	cursor:hand;	
+  
+}
+
+.menu {
+	
+	filter:progid:DXImageTransform.Microsoft.GradientWipe(GradientSize=0.75,wipestyle=1,motion=forward,duration=0.5)progid:DXImageTransform.Microsoft.Fade(duration=0.5);
+	FONT-SIZE: 9pt; 
+	VISIBILITY: hidden; 
+	WIDTH: 144px; 
+	background-repeat: no-repeat;
+	FONT-FAMILY:"Georgia", "Times New Roman", Times, serif;
+	POSITION: absolute;
+	TOP: 55px; 
+	HEIGHT: 100px;
+	text-align:center;
+	font-weight:bold;
+	color: #706161;
+	z-index:1;
+	cursor:hand;
+}
+
+.itemsubmenu {
+  
+	background:url(../imagenes/menu/medio.gif) #f5f4dc no-repeat;
+	height:26px;
+	padding-top:4px;
+	text-align:center;
+
+  
+}
