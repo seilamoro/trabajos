@@ -1,0 +1,60 @@
+div.tableContainer {
+	clear: both;
+	overflow-y: scroll;
+}
+
+div.tableContainer table {
+	float: left;
+}
+
+thead.fixedHeader th {
+  	font-size: 11px;
+	background-color: #064C87;
+	border-left: 1px solid #F4FCFF;
+	border-right: 1px solid #F4FCFF;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+thead.fixedHeader th div{
+  	cursor: pointer;
+}
+
+thead.fixedHeader tr {
+	position: relative;
+}
+
+tbody.scrollContent {
+	background-color: #F4FCFF;
+}
+
+tbody.scrollContent td, tbody.scrollContent tr.normalRow td {
+	border-right: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+body{
+	font-family:Verdana;
+	color:#064C87;
+	font-size:12px;
+	font-weight:bold;
+}
+
+table{
+	font-family:Verdana;
+	color:#064C87;
+	font-size:12px;
+	font-weight:bold;
+}
+
+table input{
+	border:none;
+	background:transparent;
+	font-family:Verdana;
+	color:#064C87;
+	font-size:12px;
+}

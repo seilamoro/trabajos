@@ -1,0 +1,105 @@
+legend{
+  	color:red;
+  	font-size:20px;
+}
+
+#divGeneralListado{
+  	max-height:600px;
+  	min-height:600px;
+  	height:85%;
+	/*height:600px;*/
+  	width:100%;
+	width:1188px;
+	clear:both;
+  	overflow:auto;
+	border:1px solid #3F7BCC;
+	border-bottom:none;
+}
+
+#divBotonesAbajo{
+	float:none;
+	clear:both;
+	border-top:1px solid #3F7BCC;
+	width:100%;
+	width:1188px;
+} 
+
+#divFieldset{
+  	float:left;
+  	display:inline;
+  	padding:0px;
+  	width:49%;
+	height:100%;
+}
+
+#tablaClientes{
+  	padding:0px;
+}
+
+#nombreCliente{
+  	text-align:center;
+  	color:rgb(0,0,255);
+  	font-size:15px;
+}
+
+#tipoCliente{
+  	color:rgb(215,28,25);
+}
+
+#tablaDetallesCliente{
+  	text-align:left;
+  	border:1px solid rgb(24,24,24);
+  	padding:0px 0px 0px 0px;
+}
+
+#tablaEdadesHabitaciones{
+  	float:left;
+  	padding:0px;
+  	border:1px solid rgb(24,24,24);
+  	border-bottom:none;
+  	border-left:none;
+	border-right:none;
+}
+
+#titulosCeldasTablaTaquilla{
+  	text-align:center;
+  	font-weight:bold;
+	border-top:1px solid rgb(0,0,0);
+  	border-bottom:2px dashed rgb(0,0,0);
+}
+
+#celdaTitulosEdadesHabitaciones{
+  	font-weight:bold;
+	border-bottom:2px dashed rgb(0,0,0);
+	text-align:center;
+}
+
+#tablaHabitacionesReserva{
+  	padding:0px;
+	float:left;
+	border:1px solid rgb(24,24,24);
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	width:100%;
+}
+
+#titulosCeldasTablaReservasHabitaciones{
+ 	text-align:center;
+	border-bottom:2px dashed rgb(0,0,0);
+	font-weight:bold;
+}
+
+body{
+ 	font-family:verdana;
+}
+
+td{
+	font-size:9px;
+	font-family:verdana;
+	text-align:left;
+}
+
+tr{
+  	padding:0px 0px 0px 0px;
+}

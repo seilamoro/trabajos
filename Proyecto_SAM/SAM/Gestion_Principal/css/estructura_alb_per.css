@@ -1,0 +1,52 @@
+#caja_superior{
+	min-height:500px;
+	height:auto;
+	width:1200px;
+	padding-bottom:5px;
+	padding-left:0px;
+	margin-left:0px;
+	float:left;
+	
+	/*border-bottom:solid 3px #064C87;*/
+}
+#caja_superior_izquierda{		
+	height:auto;
+	min-height:500px;
+	width:350px;
+	float:left;
+	margin-left:0px;
+	padding-left:35px;
+	padding-right:25px;
+}
+#caja_superior_derecha{		
+	height:100%;
+	width:700px;
+	float:right;
+	padding-right:35px;
+	padding-left:0px;
+	/*border-left:solid 2px #064C87;*/
+}
+* html #caja_superior_derecha{
+	margin-left:4px;	
+}
+#caja_superior_derecha_a{		
+	width:700px;
+	padding-right:0px;
+	height:auto;
+}
+* html #caja_superior_derecha_a{		
+	height:200px;
+}
+#caja_superior_derecha_b{		
+	width:700px;	
+	text-align:center;
+	margin-top:20px;
+	/*border-top:solid 3px #064C87;*/	
+}
+* html #caja_superior_derecha_b{
+	margin-top:0px;
+}
+#caja_inferior{
+	clear:both;	
+	padding-top:50px		
+}

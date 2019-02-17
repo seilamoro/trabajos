@@ -1,0 +1,148 @@
+.cama_libre {
+	height: 25px; 
+	width: 25px; 
+	background-color: rgb(255,255,255); 
+	cursor: default;
+	}
+.cama_ocupada {
+	height: 25px; 
+	width: 25px; 
+	background-color: rgb(238,0,0); 
+	cursor: pointer;
+	}
+.cama_reservada {
+	height: 25px; 
+	width: 25px; 
+	background-color: rgb(135,135,135); 
+	cursor: pointer;
+	}
+.cama_reserva_resaltada {
+	height: 25px; 
+	width: 25px; 
+	background-color: rgb(136,136,136); 
+	cursor: pointer;
+	}
+.no_cama {
+	height: 25px; 
+	width: 25px; 
+	background-color: rgb(6,76,135); 
+	cursor:default; 
+	}
+.cama_temp {
+	height: 25px; 
+	width: 25px; 
+	background-color: rgb(92,141,190); 
+	cursor: pointer; 
+	}
+.cama_resaltada {
+	height: 25px; 
+	width: 25px; 
+	background-color: rgb(0,255,0); 
+	cursor: pointer;
+	}
+.cama_libre_con {
+	height: 25px; 
+	width: 25px; 
+	background-color: rgb(255,255,255); 
+	cursor: pointer;
+	}
+#cama_reservada_online {
+	height: 25px; 
+	width: 25px; 
+	background-color: rgb(135,135,135); 
+	}
+.cama_asignada {
+	height: 25px; 
+	width: 25px; 
+	background-color: rgb(254,226,114); 
+	}
+#cama_ocupada_online {
+	height: 25px; 
+	width: 25px; 
+	background-color: rgb(238,0,0); 
+	}
+.linea_blanca {
+	background-repeat:repeat-y; 
+	background-position:center top; 
+	}
+.nom_hab_online {
+	text-align: center; 
+	font-size: 11px; 
+	font-weight: bold; 
+	background-color: rgb(86,156,215); 
+	color: rgb(240,240,240); 
+	cursor: pointer; 
+	}
+.nom_hab {
+	text-align: center; 
+	font-size: 11px; 
+	font-weight: bold; 
+	background-color: rgb(86,156,215); 
+	color: rgb(240,240,240); 
+	cursor:default; 
+	}
+.nom_tipo_hab {
+	text-align: center; 
+	font-size: 14px; 
+	font-weight: bold; 
+	background-color: rgb(6,76,135); 
+	color: rgb(246,245,240); 
+	}
+.tabla_habitaciones {
+	background-color: rgb(6,76,135);
+	}
+.separar_hab {
+	background-color: rgb(255,255,255);
+	}
+.nom_hab_seleccion {
+	text-align: center; 
+	font-size: 11px; 
+	font-weight: bold; 
+	background-color: rgb(244,252,255); 
+	color: rgb(62,92,130); 
+	cursor: pointer; 
+	}
+.nom_hab_mini {
+	text-align: center; 
+	font-size: 10px; 
+	font-weight: bold; 
+	background-color: rgb(86,156,215); 
+	color: rgb(240,240,240); 
+	cursor:default; 
+	}
+.no_cama_mini {
+	width: 15px; 
+	font-size: 1px;  
+	background-color: rgb(6,76,135); 
+	cursor:default; 
+	}
+.cama_libre_mini {
+	width: 15px; 
+	font-size: 1px; 
+	background-color: rgb(255,255,255); 
+	cursor: default; 
+	}
+.cama_reservada_mini {
+	font-size: 1px; 
+	width: 15px; 
+	background-color: rgb(135,135,135); 
+	cursor: pointer; 
+	}
+.cama_ocupada_mini {
+	font-size: 1px; 
+	width: 15px; 
+	background-color: rgb(238,0,0); 
+	cursor: pointer; 
+	}
+div.div_tabla_habitacion_mes {
+	width: 343px; 
+	background-color: rgb(6,76,135); 
+	border: 1px solid #3F7BCC; 
+	overflow-x: scroll; 
+	}
+div.div_tabla_habitacion_mes table {
+	background-color: rgb(6,76,135); 
+	}
+div.div_tabla_habitacion_mes table tr {
+	height: 15px; 
+	}

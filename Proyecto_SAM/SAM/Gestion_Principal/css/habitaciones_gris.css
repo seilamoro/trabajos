@@ -1,0 +1,525 @@
+.nom_hab {
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #569CD7;
+  color: white;
+}
+
+/* Nuevo Jaime */
+.nom_tipo_hab {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #064C87;
+  color: white;
+}
+
+.separar_hab {
+  background-color: #569CD7;
+}
+/* Fin Nuevo Jaime */
+.no_cama {
+  height: 20px;
+  width: 20px;
+  background-color: #064C87;
+  cursor: default;
+}
+
+.cama_libre {
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  cursor: default;
+}
+
+.cama_reservada {
+  height: 20px;
+  width: 20px;
+  background-color: #C0C0C0;
+  cursor: pointer;
+}
+
+.cama_ocupada {
+  height: 20px;
+  width: 20px;
+  background-color: #FF0000;
+  cursor: pointer;
+}
+
+.titulo_tablas {
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #FFFFFF;
+}
+
+.tabla_detalles {
+  border:solid 1px;
+  border-color:#707375;
+  background-color: #EAEBEC;
+}
+
+.tabla_calendario {
+  font-size: 15px;
+  font-weight: bold;
+  color: #3F7BCC;
+  background-color: #F4FCFF;
+}
+
+.tabla_habitaciones {
+  background-color: #EAEBEC;
+}
+
+.texto_detalles {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.texto_listados {
+  font-size: 11px;
+  font-weight: bold;
+  color: #3F7BCC;
+}
+
+.titulo_listado {
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #064C87;
+  color: #FFFFFF;
+}
+
+.texto_calendario {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.boton {
+  background-color: transparent;
+  border-color: #3F7BCC;
+  border-style: solid;
+  color: #3F7BCC;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.seleccion {
+  background-color: #F4FCFF;
+  border-color: #3F7BCC;
+  border-style: solid;
+  color: #3F7BCC;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.titulo1_tabla_grupos {
+  font-size: 14px;
+  font-weight: bold;
+  
+}
+
+.titulo2_tabla_grupos {
+  font-size: 12px;  
+  font-weight: bold;
+}
+
+.edades_tabla_grupos {
+  font-size: 11px;  
+  font-weight: bold;
+}
+
+.td_tabla_grupos {
+  font-size: 11px;  
+  font-weight: bold;
+  color: #3F7BCC;
+}
+
+.ok {
+  font-size: 11px;
+  font-weight: bold;
+  color: green;
+}
+
+.no {
+  font-size: 11px;
+  font-weight: bold;
+  color: red;
+}
+
+/* <Input type=text...> de los detalles de las estancias*/
+
+.input_text {
+  border-style: solid;
+  border-color: #F4FCFF;
+  background-color: #F4FCFF;
+  color: #3F7BCC;
+  font-size: 11px;
+  font-weight: bold;  
+}
+
+.input_text_numerico {
+  border-style: solid;
+  border-color: #F4FCFF;
+  background-color: #F4FCFF;
+  color: #3F7BCC;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.input_text_vacio {
+  border-style: solid;
+  border-color: #3F7BCC;
+  background-color: #F4FCFF;
+  color: #3F7BCC;
+  font-size: 11px;
+  font-weight: bold;  
+}
+
+.input_text_vacio_numerico {
+  border-style: solid;
+  border-color: #3F7BCC;
+  background-color: #F4FCFF;
+  color: #3F7BCC;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.input_text_resaltado {
+  border-style: solid;
+  border-color: #F4FCFF;
+  background-color: #F4FCFF;
+  color: green;
+  font-size: 11px;
+  font-weight: bold;  
+}
+
+.input_text_buscar {
+  border-style: solid;
+  border-color: #3F7BCC;
+  background-color: #F4FCFF;
+  color: #3F7BCC;
+  font-size: 11px;
+  font-weight: bold;  
+}
+
+/*Taquillas*/
+
+.no_taquilla {
+  height: 20px;
+  width: 10px;
+  background-color: #064C87;
+  cursor: default;
+}
+
+.nom_taq {
+  text-align: center;
+  height: 20px;
+  width: 25px;
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #064C87;
+  color: white;
+}
+
+.taquilla_libre {
+  height: 20px;
+  width: 25px;
+  background-color: #557dae;
+  cursor: pointer;
+}
+
+.taquilla_ocupada {
+  height: 20px;
+  width: 25px;
+  background-color: #EECBAD;
+  cursor: pointer;
+}
+
+.taquilla_ocupada_persona {
+  height: 20px;
+  width: 25px;
+  background-color: #8B6969;
+  cursor: pointer;
+}
+
+.imagen-boton {
+  cursor:pointer;
+}
+
+.detalles_select{
+  	background-color: #F0FAFF;
+  	color: #3F7BCC;
+  	font-weight: bold;
+  	font-size: 11px;
+}
+
+/* Estilo para las tablas con scroll */
+
+div.tableContainer {
+	clear: both;
+	border: 1px solid #3F7BCC;
+	overflow-y: scroll;
+}
+
+div.tableContainer table {
+	float: left;
+}
+
+thead.fixedHeader th {
+  	font-size: 11px;
+	background-color: #064C87;
+	border-left: 1px solid #F4FCFF;
+	border-right: 1px solid #F4FCFF;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+thead.fixedHeader th div{
+  	cursor: pointer;
+}
+
+thead.fixedHeader tr {
+	position: relative;
+}
+
+tbody.scrollContent {
+}
+
+tbody.scrollContent td, tbody.scrollContent tr.normalRow td {
+	border-right: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/* Fin tablas con scroll */
+
+/* Estilo para el calendario */
+
+div.calendarContainer {
+	clear: both;
+	border: 1px solid #3F7BCC;
+}
+
+div.calendarContainer table {
+	float: left;
+}
+
+thead.fixedCalendar th {
+  	font-size: 18px;
+	background-color: #064C87;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-weight: bold;
+	color: #FFFFFF;
+  	height: 30px;
+}
+
+thead.fixedCalendar th div{
+  	cursor: pointer;
+}
+
+thead.fixedCalendar th select{
+  	background-color: #064C87;
+  	color: #FFFFFF;
+  	font-size: 18px;
+}
+
+thead.fixedCalendar tr {
+	position: relative;
+}
+
+td.tituloDia {
+  border-left: 1px solid #064C87;
+  border-right: 1px solid #064C87;
+  border-top: 1px solid #064C87;
+  border-bottom: 1px solid #064C87;
+  background-color: #F0FAFF;
+  color: #064C87;
+  font-size: 18px;
+  text-align: center;
+  width: 50px;
+}
+
+td.diaCalendario {
+  background-color: #F0FAFF;
+  color: #064C87;
+  font-size: 18px;
+  text-align: center;
+  width: 50px;
+  cursor: pointer;
+}
+
+td.diaCalendarioSin {
+  background-color: #F0FAFF;
+  color: #064C87;
+  font-size: 12px;
+  text-align: center;
+}
+
+td.diaVacioCalendario {
+  background-color: #F0FAFF;
+  width: 50px;
+}
+
+/* Fin calendario */
+
+/* ALBERTO */
+
+.cama_reserva_resaltada {
+  height: 25px;
+  width: 25px;
+  background-color: #9FEF86;
+  cursor: pointer;
+}
+
+.cama_res_resaltada{
+  height: 25px;
+  width: 25px;
+  background-color: #888888;
+  cursor: pointer;
+}
+
+.cama_temp {
+  height: 25px;
+  width: 25px;
+  background-color: #5C8DBE;
+  cursor: pointer;
+}
+
+.texto_resaltado {
+  font-size: 11px;
+  font-weight: bold;
+  color: #D4D4D4;
+  background-color:#666666;
+}
+
+.texto_resaltado_temp td{
+  font-size: 11px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color:#6C6C6C;
+}
+
+.cabezera_pestania{
+	width:390px;
+	height:550px;
+}
+
+.table_container{
+	position:relative;
+	top:-7px;
+	border:solid 1px;
+	border-color: #707375;
+	background-color: #EAEBEC;
+	width:100%;
+	height:510px;
+}
+
+.tabla_general{
+	width:390px;
+	height:550px;
+}
+/*
+.pestania_izquierda{
+	height:25px;
+	width:30px;
+	background-image:url('../imagenes/img_tablas/esquina_arriba_izquierda.jpg');
+	background-repeat:no-repeat;
+	float:left;
+}
+
+.pestania_centro{
+	width:81%;
+	height:25px;
+	text-align:center;
+	background-image:url('../imagenes/img_tablas/linea_horizontal.jpg');
+	background-repeat:repeat-x;
+	float:left;
+}
+
+.pestania_derecha{
+	height:25px;
+	width:30px;
+	background-image:url('../imagenes/img_tablas/esquina_arriba_derecha.jpg');
+	float:left;
+}
+*/
+/* Estilo para las tablas con scroll */
+
+div.tableContainer_res {
+	clear: both;
+	border: 1px solid #707375;
+	overflow-y: scroll;
+	background-color:#EAEBEC;
+}
+
+div.tableContainer_res table {
+	float: left;
+}
+
+thead.fixedHeader_res th {
+  	font-size: 11px;
+	background-color: #064C87;
+	border-left: 1px solid #F4FCFF;
+	border-right: 1px solid #F4FCFF;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+thead.fixedHeader_res tr {
+	position: relative;
+}
+
+tbody.scrollContent_res {
+	background-color: #EAEAEA;
+}
+
+tbody.scrollContent_res td, tbody.scrollContent tr.normalRow td {
+	border-right: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/* Fin tablas con scroll */
+/* FIN AL */
+
+/* Estilos THEMES de AL */
+
+.champi_izquierda{
+	height:30px;
+	width:30px;
+	background-image:url('../../imagenes/img_tablas/pestania_izq_gris.gif');
+	background-repeat:no-repeat;
+	float:left;
+}
+
+.champi_centro{
+	height:30px;
+	text-align:center;
+	color:#42474B;
+	background-image:url("../../imagenes/img_tablas/pestania_cen_gris.gif");
+	background-repeat:repeat-x;
+	text-align:center;
+	font-family:Verdana;
+	font-size:18px;
+	font-weight:bold;
+	max-height:30px;
+	float:left;
+}
+
+.champi_derecha{
+	height:30px;
+	width:30px;
+	background-image:url('../../imagenes/img_tablas/pestania_der_gris.gif');
+	float:left;
+}
+
+/* FIN THEMES */

@@ -1,0 +1,641 @@
+
+/*#DCE2E7*/
+body{
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	background-color:#cbdef1;
+	/************************** Barra de Scroll ***********************************/
+	
+	/************************** Barra de Scroll ***********************************/
+}
+
+#parent{	
+	border-right:solid 2px #569CD7;
+	border-left:solid 2px #569CD7;
+/*	border-bottom:solid 2px #569CD7;*/
+	min-height:450px;
+	width:1200px;
+	margin-top:0px;	
+	margin-bottom:-5px;
+	z-index:2;
+	background-color:#FFFFFF;
+	height:100%;
+}
+* html #parent{
+	width:1200px;
+	height:650px;
+}
+#cabecera{
+	width:1200px;
+	height:104px;
+	background-image:url('../../imagenes/skins-azul/fondo_cabecera.gif');
+	background-repeat:repeat-x;
+	/*border:solid 1px;*/
+}
+/**************************CABECERA*****************************/
+	#cab_sup{
+		border:solid 1px #557dae;
+		border-bottom:solid 2px #557dae;
+		width:100%;
+		height:20px;
+		background-color:#569CD7;
+	}
+	#cab1{
+		position:relative;
+		z-index:2;
+		top:0px;
+		height:104px;
+		width:595px;
+/*		background-color:#569CD7;*/
+		margin-left:0px;
+		float:left;
+		background-image:url('../../imagenes/skins-azul/cab_izquierda.gif');
+		background-repeat:no-repeat;		
+	}
+	* html #cab2{
+		background-color:#569CD8;
+		margin-right:5px;
+
+	}
+	#cab2{
+		margin-top:3px;
+		/*border-left:solid 1px #DCE2E7;
+		border-bottom:solid 1px #DCE2E7;
+		border-right:solid 1px #DCE2E7;*/
+		background-color:#569CD8;
+		height:auto;
+		width:90px;	
+		float:left;	
+		padding:0px 0px 0px 0px;
+	}
+
+	.boton_superior{
+		margin-top:5px;
+		margin-left:13px;
+		height:85px;
+		width:85px;
+		float:left;
+		cursor:pointer;
+	}
+
+	.boton_superior_in{
+		margin-top:5px;
+		margin-left:13px;
+		height:85px;
+		width:85px;
+		float:left;
+		cursor:default;
+	}
+
+	* html .boton_superior{
+		margin-left:13px;
+	}
+	#subtitulos_superior{
+		text-align:left;
+		margin-top:0px;
+		height:20px;
+	}
+	* html #subtitulos_superior{
+		margin-top:-5px;
+		margin-left:0px;
+		text-align:left;
+		height:15px;		
+		padding-left:0px;	
+	}
+	.subtitulo_boton{
+		height:10px;
+		color:#F3F3F3;
+		font-family:Verdana;
+		font-size:11px;	
+		border:solid 1px #f3f3f3;
+		background-color:#3C7BB1;
+	}
+	#caja_botones_sup{
+		width:100%;
+		height:80px;
+	}
+
+	#subtitulo_alberguista{
+		visibility:hidden;
+		text-align:center;
+		margin-left:-475px;
+	}
+
+	* html #subtitulo_alberguista{
+		margin-left:45px;
+	}
+	#subtitulo_grupos{
+		margin-left:40px;	
+		text-align:center;
+		visibility:hidden;	
+	}	
+	#subtitulo_peregrino{
+		visibility:hidden;
+		text-align:center;
+		margin-left:45px;
+	}
+	* html #subtitulo_peregrino{
+		margin-left:45px;
+	}
+	#subtitulo_reservas{
+		visibility:hidden;
+		text-align:center;	
+		margin-left:34px;
+	}
+
+	#subtitulo_habitaciones{
+		visibility:hidden;
+		text-align:center;
+		margin-left:32px;
+	}
+
+
+	#boton_a a:hover{
+		background-image:url('../../imagenes/skins-azul/boton_alberguista.jpg');
+		background-repeat:no-repeat;
+	}
+	
+
+	.menu_alertas{	
+	 	z-index:2;
+		padding:0px 0px 0px 0px;
+		width:90px;
+		height:90px;
+		display:inline;
+		text-align:center;	
+		list-style:none;
+		list-style-position:inside;		
+		padding:0px 0px 0px 0px;
+		margin-left:90px;
+		margin-top:0px;	
+		margin-bottom:0px;
+		border-top:solid 1px #ffffff;		
+		font-size:13px;
+		color:#3B719F;
+		border-color:white;
+		border:solid 2px;
+		float:left;
+	}
+
+	.td.menu_alertas{
+		border-color:white;
+		border:solid 1px;
+	}
+
+	* html .menu_alertas{
+		margin-top:-1px;
+		border-top:none;
+	}
+	.menu_alertas a{
+		text-decoration:none;
+		color:#f3f3f3;
+				
+	}
+	.menu_alertas li{					
+		display:block;
+		float:left;
+		font-size:12px;
+		color:#f3f3f3;
+		font-weight:bold;
+		width:77px;
+		height:20px;
+		margin-top:0px;
+		margin-left:0px;
+		padding-left:0px;
+		padding-top:2px;
+		border-left:solid 1px;		
+	}	
+	* html .menu_alertas li{
+		width:75px;		
+	}
+	.menu_alertas img{
+		margin-top:-1px;
+		margin-left:0px;
+	}
+	.menu_alertas li span{
+		height:20px;
+		background-color:#5393D1;
+	}
+	/********      Estilo del Calendario       ********/
+
+	.cale_container{
+	 	display:block;
+		z-index:2;
+		position:absolute;
+		margin-top:10px;
+		margin-left:-225px;
+		padding:0px 0px 0px 0px;
+		width:425px;
+		height:103px;
+	}
+	
+	.calendario_dias{
+		position:relative;
+		float:right;
+		margin-right:70px;
+		height:95px;
+		padding:0px;
+	}
+	
+	.calendario_dias table tr td{
+	 	padding:0px;
+	 	width:16px;
+	 	height:16px;
+		font-size:9px;
+		text-align:center;
+		color:#236194;
+		cursor:pointer;
+		font-weight:bold;
+	}
+	
+	#dia_selected{
+		color:white;
+		background-color:#7AB3E0;
+	}
+	
+	.calendario_mes {
+	 	z-index:1;
+		position:relative;
+		float:left;
+		margin-left:60px;
+		margin-top:10px;
+		width:170px;
+		height:70px;
+		text-align:center;
+		color:#236194;
+	}
+	
+	.calendario_mes SELECT{
+	 	z-index:1;
+		background-color:#EDF6FC;
+		color:#236194;
+		border:solid 1px;
+		margin:5px;
+		font-size:12px;
+	}
+	
+/**************** FIN CALENDARIO  ********************/
+/****************    ALERTAS      ********************/
+
+	#caja_alertas{
+		position:relative;
+		float:left;
+		margin-left:35px;
+	}
+
+	.elemento_alertas{
+		margin-top:3px;
+		margin-bottom:3px;
+	}
+	.cab_derecha{
+		z-index:2;
+		padding:0px 0px 0px 0px;
+		height:104px;
+		width:380px;
+		float:right;
+		background-image:url('../../imagenes/skins-azul/cab_derecha.gif');
+	}
+
+	#pie_pagina{
+		margin-top:0px;
+		margin-bottom:0px;
+		width:1200px;
+		height:50px;
+		background-image:url('../../imagenes/skins-azul/principal_pie.gif');
+	}
+
+	.elemento_alarmas{
+		display:block;
+		border:solid 1px;
+		border-color:white;
+		cursor: pointer;
+	}
+
+	.alarm_container{
+		/*background-image:url('../../imagenes/skins-azul/fondo_alarmas5.gif');
+		background-color:#569CD8;*/
+		position:relative;
+		z-index:2;
+		width:245px;
+		height:95px;
+		float:right;
+	}
+
+	.alarm_selected{
+		background-color:#EDF6FC;
+		color:#569CD8;
+		position:relative;
+		left:-3px;
+		border:solid 0px;;
+	}
+	.flecha_borde{
+		position:relative;
+		float:right;
+		margin:15px;
+		left:35%;
+	}
+
+
+	/***** fin calendario *****/
+/************************** FIN CABECERA*****************************/
+
+#contenido{
+	min-height:650px;
+	clear:both;
+	height:auto;
+	margin-right:0px;
+	padding-right:0px;
+	padding-left:0px;
+	width:1190px;	
+	padding-top:5px;
+	padding-bottom:5px;
+}
+* html #contenido{
+	height:650px;
+}
+#pie{
+	clear:both;
+	width:1200px;
+	height:30px;
+	margin-bottom:0px;
+}
+.img_down{
+	margin-top:5px;		
+}
+* html .img_down{
+	z-index:2;
+}
+/*******************************PIE**********************************/
+	
+	#iconos_pie{
+		position:relative;
+		/*background-color:#569CD7;
+		border:solid 1px;*/
+		float:left;
+		height:37px;		
+		padding-left:15px;
+		padding-right:5px;
+		margin-top:2px;
+		width:200px;
+		
+	}
+	#pie2{
+		float:right;
+		height:50px;
+		width:70px;
+	}
+	.bottom_links{
+		display:none;
+		text-align:center;
+		color:#f3f3f3;
+		font-family:Verdana;
+		font-weight:bold;
+		font-size:15px;
+		margin-left:-5px;	
+		margin-top:5px;			
+	}	
+	.bottom_links a:link{
+		text-decoration:none;
+		color:#f3f3f3;
+	}
+	.bottom_links a:hover{
+		text-decoration:none;
+		color:#f3f3f3;
+		border-bottom:solid 1px;
+	}
+	.bottom_links a:visited{
+		text-decoration:none;
+		color:#f3f3f3;
+	}
+	* html .bottom_links{
+		height:25px;		
+	}
+	
+	
+
+	* html #separador_pie{
+		float:right;		
+		width:90%;
+		height:7px;
+		/*border:solid 1px black;*/
+		border-bottom:solid 2px #569CD7;
+		margin-top:-9px;
+		margin-left:80px;
+		font-size:5px;
+	}
+	#gestion_interna{
+		/*background-color:#569CD8;		*/
+		height:45px;
+		width:200px;		
+		float:right;
+		margin-top:0px;
+		margin-left:0px;
+		border-top:solid 0px #9CC2E6;
+		color:#f3f3f3;
+		font-family:Verdana;
+		font-weight:bold;
+		font-style:oblique;
+		font-size:16px;	
+	}
+	* html #gestion_interna{
+		margin-top:0px;
+	}
+	#gestion_interna a:link{
+		text-decoration:none;
+		color:#f3f3f3;
+	}
+	#gestion_interna a:hover{
+		text-decoration:underline;
+		color:#f3f3f3;
+	}
+	#gestion_interna a:visited{
+		text-decoration:none;
+		color:#f3f3f3;
+	}
+	
+/*******************************PIE**********************************/
+/*#DCE2E7*/
+
+
+.alertas{
+	border-left:solid 1px #DCE2E7;
+	border-left:solid 1px #DCE2E7;
+	border-bottom:solid 1px #DCE2E7;
+	width:100%;
+	margin-top:0px;
+	overflow:auto;
+	max-height:70px;
+	height:40px;
+	background-color:#F4FCFF;
+	text-align:left;
+}
+
+
+	
+/*************************   TEXTO   *******************************/
+.titulo{
+	text-align:left;
+	font-family:Verdana;
+	font-size:18px;
+	font-weight:bold;
+/*	background-color:#467BAF;*/	
+	color:#F3F3F3;	
+	max-height:30px;
+}
+.subtitulo{
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:bold;
+	background-color:#569CD7;
+	color:#F3F3F3;	
+}
+.texto{
+	font-family:Verdana;
+	font-size:12px
+}	
+.titulo_alertas{
+	font-family:Verdana;
+	font-size:18px;
+	font-weight:bold;
+	color:#3F7BCC;		
+}
+
+.alerta a{	
+	font-family:Verdana;
+	font-size:10px;
+	font-weight:bold;
+	color:#3F7BCC;
+	text-decoration:none;
+	/*color:#569CD7;*/
+}
+.alerta a:link{
+	text-decoration:none;
+	color:#3F7BCC;
+}
+.alerta a:visited{
+	text-decoration:none;
+	color:#3F7BCC;
+
+}
+.alerta a:hover{
+	text-decoration:underline;
+	color:#3F7BCC;
+}
+
+/*************************   TEXTO   *******************************/
+
+/*************************    LOGIN     *****************************/
+#div_login{
+	margin-top:50px;
+	height:250px;
+	width:300px;
+	border-left:solid 3px #477CB0;
+	border-right:solid 3px #477CB0;
+	border-bottom:solid 3px #477CB0;
+	text-align:center;
+}
+#cabecera_login{
+	font-family:Verdana;
+	font-size:14px;
+	background-color:#569CD7;
+	color:#f3f3f3;
+	font-weight:bold;
+	height:25px;
+	width:296px;
+	padding-top:10px;
+	padding-left:5px;
+	text-align:left;
+	border-top:solid 2px #477CB0;
+	border-bottom:solid 2px #477CB0;
+}
+#contenido_login{
+	margin-top:10px;
+	width:300px;
+	text-align:center;
+}
+#id_login{	
+	margin-top:5px;
+	padding-left:20px;
+	width:250px;
+	height:20px;	
+	text-align:left;
+}
+#pass_login{
+	margin-top:5px;
+	padding-left:20px;
+	width:250px;
+	height:20px;	
+	text-align:left;
+}
+#div_submit_login{
+	margin-top:60px;
+}
+/*************************    FIN LOGIN     *****************************/
+
+
+
+#error_login_campos{
+	font-size:12px;
+	margin-top:10px;
+	margin-left:25px;
+	display:none;
+}
+
+
+/* Estilos THEMES */
+
+.champi_izquierda{
+	height:30px;
+	width:30px;
+	background-image:url('../../imagenes/img_tablas/champi_izq_azul.gif');
+	background-repeat:no-repeat;
+	float:left;
+}
+
+.champi_centro{
+	height:30px;
+	text-align:center;
+	color:#FFFFFF;
+	background-image:url('../../imagenes/img_tablas/champi_cen_azul.gif');
+	background-repeat:repeat-x;
+	text-align:center;
+	font-family:Verdana;
+	font-size:18px;
+	font-weight:bold;
+	max-height:30px;
+	float:left;
+	padding-top:3px;
+	margin-bottom:-3px;
+}
+
+.champi_derecha{
+	height:30px;
+	width:30px;
+	background-image:url('../../imagenes/img_tablas/champi_der_azul.gif');
+	float:left;
+}
+
+/* FIN THEMES */
+
+/* Estilos para el efecto del boton de atras */
+
+.boton_dentro{
+	position:relative;
+	left:-57px;
+	top:5px;
+	z-index:1;
+}
+
+.boton_sacar{
+	position:relative;
+	left:32px;
+	top:-4px;
+}
+
+.boton_meter{
+	position:relative;
+	left:0px;
+	top:0px;
+}
+
+/*  ------  */
