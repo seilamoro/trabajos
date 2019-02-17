@@ -1,0 +1,59 @@
+
+##### groupXX	2017/12/17 17:53:53
+----- [groupXX@127.0.1.1:35000] Result:
+ Group id: groupXX
+Node id: groupXX@127.0.1.1:35000
+Recipes: {a=[a, a, groupXX], b=[b, b, groupXX], c=[c, c, groupXX], d=[d, d, groupXX], e=[e, e, groupXX], f=[f, f, groupXX]}
+Log: AddOperation [recipe=[e, e, groupXX], timestamp=groupXX@127.0.1.1:35002:   0]
+AddOperation [recipe=[f, f, groupXX], timestamp=groupXX@127.0.1.1:35002:   1]
+AddOperation [recipe=[a, a, groupXX], timestamp=groupXX@127.0.1.1:35000:   0]
+AddOperation [recipe=[b, b, groupXX], timestamp=groupXX@127.0.1.1:35000:   1]
+AddOperation [recipe=[c, c, groupXX], timestamp=groupXX@127.0.1.1:35001:   0]
+AddOperation [recipe=[d, d, groupXX], timestamp=groupXX@127.0.1.1:35001:   1]
+
+Summary: groupXX@127.0.1.1:35002:   1
+groupXX@127.0.1.1:35000:   1
+groupXX@127.0.1.1:35001:   1
+
+Ack: groupXX@127.0.1.1:35002:   groupXX@127.0.1.1:35002:   1
+groupXX@127.0.1.1:35000:   1
+groupXX@127.0.1.1:35001:   1
+
+groupXX@127.0.1.1:35000:   groupXX@127.0.1.1:35002:   1
+groupXX@127.0.1.1:35000:   1
+groupXX@127.0.1.1:35001:   1
+
+groupXX@127.0.1.1:35001:   groupXX@127.0.1.1:35002:   1
+groupXX@127.0.1.1:35000:   1
+groupXX@127.0.1.1:35001:   1
+
+
+##### groupXX	2017/12/17 17:53:53
+----- [groupXX@127.0.1.1:35001] Result:
+ Group id: groupXX
+Node id: groupXX@127.0.1.1:35001
+Recipes: {a=[a, a, groupXX], b=[b, b, groupXX], c=[c, c, groupXX], d=[d, d, groupXX], e=[e, e, groupXX], f=[f, f, groupXX]}
+Log: AddOperation [recipe=[e, e, groupXX], timestamp=groupXX@127.0.1.1:35002:   0]
+AddOperation [recipe=[f, f, groupXX], timestamp=groupXX@127.0.1.1:35002:   1]
+AddOperation [recipe=[a, a, groupXX], timestamp=groupXX@127.0.1.1:35000:   0]
+AddOperation [recipe=[b, b, groupXX], timestamp=groupXX@127.0.1.1:35000:   1]
+AddOperation [recipe=[c, c, groupXX], timestamp=groupXX@127.0.1.1:35001:   0]
+AddOperation [recipe=[d, d, groupXX], timestamp=groupXX@127.0.1.1:35001:   1]
+
+Summary: groupXX@127.0.1.1:35002:   1
+groupXX@127.0.1.1:35000:   1
+groupXX@127.0.1.1:35001:   1
+
+Ack: groupXX@127.0.1.1:35002:   groupXX@127.0.1.1:35002:   1
+groupXX@127.0.1.1:35000:   1
+groupXX@127.0.1.1:35001:   1
+
+groupXX@127.0.1.1:35000:   groupXX@127.0.1.1:35002:   1
+groupXX@127.0.1.1:35000:   1
+groupXX@127.0.1.1:35001:   1
+
+groupXX@127.0.1.1:35001:   groupXX@127.0.1.1:35002:   1
+groupXX@127.0.1.1:35000:   1
+groupXX@127.0.1.1:35001:   1
+
+================================================
