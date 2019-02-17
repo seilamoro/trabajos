@@ -1,0 +1,60 @@
+#td_detalles_habitacion {
+    text-align: center;
+}
+
+#td_habitacion_mini {
+  	height: 70px;
+  	width: 70px;
+  	vertical-align: middle;
+  	text-align: center;
+}
+
+#td_numero_habitacion_triple {
+    font-size: 12px;
+    font-weight: bold;
+  	height: 18px;
+    text-align: center;
+}
+
+#td_numero_habitacion_multiple {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+  	height: 18px;
+  	width: 18px;
+}
+
+#a_numero_habitacion {
+    color: black;
+    text-decoration: none;
+}
+
+#td_numero_habitacion_detalles {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#cama_mini_libre {
+  	height: 18px;
+  	width: 18px;
+  	background-color: EFCD71;
+}
+
+#cama_maxi_libre {
+  	height: 100px;
+  	width: 100px;
+  	background-color: EFCD71;
+}
+
+#cama_mini_reservada{
+    height: 18px;
+  	width: 18px;
+  	background-color: #FF3300;
+}
+
+.redondo{
+border:solid 1px;
+-moz-border-radius:6px;
+border-color:black;
+}

@@ -1,0 +1,36 @@
+
+.fondo_celda
+{
+	font-size:12;
+	color:"#A90056";
+	font-weight:bold;
+	background-color:"#F9A872";
+}
+.letra_titulo
+ {
+	color:"#C40056";
+	text-align:center;
+	font-family: Arial, Helvetica;
+	
+ }
+ .letra_asterisco
+ {
+	font-size:12;
+	color:"#F79239";
+	
+ }
+ .fondo_celda_tarifa
+{
+	font-size:20;
+	color:"#A90056";
+	font-weight:bold;
+	background-color:"#F9A872";
+}
+.fondo_filas
+{	
+	font-size:18;
+	background-color:"#F4EFB";
+	text-align:center;	 
+	font-style:italic;
+
+}

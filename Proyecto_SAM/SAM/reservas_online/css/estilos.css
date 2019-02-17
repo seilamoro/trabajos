@@ -1,0 +1,199 @@
+/*------------ Menu Superior-------------------------*/
+	
+/*a:link{text-decoration:none;color:black;}
+a:visited{text-decoration:none;color:black;}
+a:active{text-decoration:none;color:black;}*/
+
+#menu_cabecera{
+	font-size:14px;
+	/*border:solid 1px blue;*/
+	/*margin-top:15%;*/
+	margin-top:0px;
+	height:30px;
+	/*width:100%;*/
+	min-width:760px;
+	background-color:#F0FAD3;
+}
+* html #menu_cabecera{
+		
+	height:20px;
+}
+#menulist_cabecera{
+	list-style-type:none;
+	display:inline;
+	z-index:4;
+}
+.menu_up li{
+	position:relative;	
+	list-style-type:none;
+	float:left;
+	display:block;
+    height:30px;	
+	width:106px;
+/*	width:14%;*/
+	font-size:smaller;
+	text-align:center;
+	display:block;
+}
+* html .menu_up li{
+	font-size:11px;
+	text-align:center;
+	display:block;
+}
+ul#menulist_cabecera li a{ 
+	text-decoration:none;	
+}
+.menu_up{	
+	list-style-type:none;
+	list-style-position:inside;
+}
+.submenu_up{
+	clear:both;
+	list-style-type:none;
+	list-style-position:inside;
+    position:absolute;
+	margin-top:-2px;
+	width:106px;
+    display: none;
+	height:auto;
+	background-color:#c5cf94;
+	padding:0px 0px 0px 0px;	
+	border-left:solid 1px #f0fad3;
+	border-right:solid 1px #f0fad3;
+}
+ul#menulist_cabecera ul li{
+	z-index:4;
+}
+* html .submenu_up{
+	position:absolute;
+	margin-top:35px;
+	margin-bottom:0px;
+	margin-left:-110px;
+	width:106px;
+}
+
+.submenu_up li{
+	position:relative;
+	min-width:119px;
+	min-height:10px;
+	height:15px;
+	background-color:#c5cf94;
+	border-bottom:solid 1px #f0fad3;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	font-weight:bold;
+	font-size:12px;
+}
+
+.submenu_up li:hover{
+	background-color:#f3b13d;
+	background-image:url('punto_menu.gif');
+	background-repeat:no-repeat;		
+}
+* html .submenu_up li A:hover{
+	background-color:#f3b13d;
+	background-image:url('punto_menu.gif');
+	background-repeat:no-repeat;	
+}
+* html .submenu_up li span{
+	position:relative;
+	/*width:100%;
+	height:100%;*/
+}
+/*.menu_up li:hover > .submenu_up
+{
+    display:block;
+}
+#menulist_cabecera span A:hover {display:block;}
+li:hover ul { display:block; }*/
+/*.submenu_up:*/
+/*------------ Menu Superior-------------------------*/
+
+
+.celda_ser{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+
+
+
+/********      Estilo del Calendario       ********/
+
+	.cale_container{
+	 	display:block;
+		z-index:2;
+		/*position:absolute;
+		top:3px;
+		left:555px;*/
+		padding:0px 0px 0px 0px;
+		width:370px;
+		height:103px;
+	}
+	
+	.calendario_dias{
+		/*position:relative;
+		float:right;
+		/*margin-right:70px;*/
+		height:95px;
+		padding:0px;
+	}
+	
+	.calendario_dias table tr td{
+	 	padding:2px;
+	 	width:15px;
+	 	height:15px;
+		font-size:13px;
+		text-align:center;
+		color:#67720C;
+		cursor:pointer;
+		font-weight:bold;
+	}
+	
+	#dia_selected{
+		color:white;
+		background-color:#E2A539;
+	}
+	
+	.calendario_mes {
+	 	z-index:1;
+		position:relative;
+		float:left;
+		/*margin-left:60px;
+		margin-top:20px;*/
+		width:100px;
+		text-align:center;
+		color:#236194;
+	}
+	
+	.calendario_mes SELECT{
+	 	z-index:1;
+		/*background-color:#FCDA94;
+		color:#236194;*/
+		border:solid 1px;
+		margin:5px;
+	}
+	
+/**************** FIN CALENDARIO  ********************/
+
+/******************ESTILOS PARA OTROS ALBERGUES*******/
+
+	.letra
+	{
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+	}
+	.letras_naranja
+	{
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		color:#DD6400;
+		vertical-align:top;	
+	}
+	.letras_morado
+	{
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		color:#FF9239;
+		vertical-align:top;
+	}
