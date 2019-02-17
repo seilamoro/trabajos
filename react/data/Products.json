@@ -1,0 +1,29 @@
+[
+  {
+    "Code":"VOUCHER",
+    "Name" : "Cabify Voucher",
+    "Price": "5.00€",
+    "Image": "../images/voucher.jpg",
+    "PromoCode": "AxB",
+    "Min": "2",
+    "Free": "1",
+    "NumSelect":"0"
+  },
+  {
+    "Code":"TSHIRT",
+    "Name" : "Cabify T-Shirt",
+    "Price": "20.00€",
+    "Image": "../images/t-shirt.jpg",
+    "PromoCode": "BulkPurchase",
+    "Min": "3",
+    "PromoPrice": "19.00€",
+    "NumSelect":"0"
+  },
+  {
+    "Code":"MUG",
+    "Name" : "Cabify Coffee Mug",
+    "Price": "7.50€",
+    "Image": "../images/mug.jpg",
+    "NumSelect":"0"
+  }
+]
