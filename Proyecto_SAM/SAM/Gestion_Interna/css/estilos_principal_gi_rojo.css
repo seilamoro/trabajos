@@ -1,0 +1,242 @@
+body {
+	margin-top:0px;
+	margin-bottom:0px;
+	background-color:#b4c6d9;
+}
+#parent{
+	border:solid 1px;
+	min-height:560px;	
+	min-width:1200px;
+	width:1200px;
+	border-left:solid 2px #E73A3A;
+	border-right:solid 2px #E73A3A;
+	background-color:#f8f8f8;
+	
+}
+* html #parent{
+	height:650px;
+	width:1200px;
+} 
+#cabecera{
+	width:100%;
+	height:165px;	
+	padding-top:20px;
+	background-image:url('../../imagenes/rojo/cabecera_fondo.gif');
+	/*border-bottom:solid 20px #5A90CF;	
+	background-color:064C87;*/
+}
+* html #cabecera{
+	padding-top:35px;	
+}
+
+#pie{
+	width:1200px;
+	height:50px;	
+	border-left:solid 2px #E73A3A;
+	border-right:solid 2px #E73A3A;
+	background-image:url('../../imagenes/rojo/fondo_borra.gif');
+}#cabecera a:link {
+	text-decoration:none;
+}
+#cabecera a:hover > .menu_up{
+	text-decoration:underline;
+	border-bottom:solid 1px #064C87;
+	border-right:solid 1px;
+	color:#064C87;	
+}
+#cabecera a:visited  {
+	text-decoration:none;
+	
+}
+.boton_superior_gi_hab{		
+		color:#f3f3f3;
+		background-image:url('../../imagenes/rojo/boton_vacio.gif');
+		background-repeat:no-repeat;
+		font-family:verdana;
+		font-size:35px;
+		font-weight:bold;
+		margin-left:15px;
+		height:80px;
+		width:80px;
+		float:left;		
+		text-align:center;
+		padding-top:15px;
+}
+.boton_superior_gi_taq{		
+		color:#f3f3f3;
+		background-image:url('../../imagenes/rojo/boton_vacio_taq.gif');
+		background-repeat:no-repeat;
+		font-family:verdana;
+		font-size:35px;
+		font-weight:bold;
+		margin-left:15px;
+		height:80px;
+		width:80px;
+		float:left;		
+		text-align:center;
+		padding-top:15px;
+}
+.boton_superior_gi_usu{		
+		color:#f3f3f3;
+		background-image:url('../../imagenes/rojo/boton_vacio_usu.gif');
+		background-repeat:no-repeat;
+		font-family:verdana;
+		font-size:35px;
+		font-weight:bold;
+		margin-left:15px;
+		height:80px;
+		width:80px;
+		float:left;		
+		text-align:center;
+		padding-top:15px;
+}
+.boton_superior_gi_reaj{		
+		color:#f3f3f3;
+		background-image:url('../../imagenes/rojo/boton_vacio_reaj.gif');
+		background-repeat:no-repeat;
+		font-family:verdana;
+		font-size:35px;
+		font-weight:bold;
+		margin-left:15px;
+		height:80px;
+		width:80px;
+		float:left;		
+		text-align:center;
+		padding-top:15px;
+}
+.boton_superior_gi_tar{		
+		color:#f3f3f3;
+		background-image:url('../../imagenes/rojo/boton_vacio_tar.gif');
+		background-repeat:no-repeat;
+		font-family:verdana;
+		font-size:35px;
+		font-weight:bold;
+		margin-left:15px;
+		height:80px;
+		width:80px;
+		float:left;		
+		text-align:center;
+		padding-top:15px;
+}
+.boton_superior_gi_policial{		
+		color:#f3f3f3;
+		background-image:url('../../imagenes/rojo/boton_vacio_policial.gif');
+		background-repeat:no-repeat;
+		font-family:verdana;
+		font-size:35px;
+		font-weight:bold;
+		margin-left:15px;
+		height:80px;
+		width:80px;
+		float:left;		
+		text-align:center;
+		padding-top:15px;
+}
+.boton_superior_gi_carne{		
+		color:#f3f3f3;
+		background-image:url('../../imagenes/rojo/boton_vacio_carne.gif');
+		background-repeat:no-repeat;
+		font-family:verdana;
+		font-size:35px;
+		font-weight:bold;
+		margin-left:15px;
+		height:80px;
+		width:80px;
+		float:left;		
+		text-align:center;
+		padding-top:15px;
+}
+.boton_superior_gi_skin{		
+		color:#f3f3f3;
+		background-image:url('../../imagenes/rojo/boton_vacio_skin.gif');
+		background-repeat:no-repeat;
+		font-family:verdana;
+		font-size:35px;
+		font-weight:bold;
+		margin-left:15px;
+		height:80px;
+		width:80px;
+		float:left;		
+		text-align:center;
+		padding-top:15px;
+}
+.boton_superior_gi_sam{		
+		color:#f3f3f3;
+		background-image:url('../../imagenes/rojo/boton_vacio_sam.gif');
+		background-repeat:no-repeat;
+		font-family:verdana;
+		font-size:35px;
+		font-weight:bold;
+		margin-left:15px;
+		height:80px;
+		width:80px;
+		float:left;		
+		text-align:center;
+		padding-top:15px;
+}
+
+.boton_superior_gi span{
+	height:40px;	
+	padding:0px 0px 0px 0px;
+}
+* html .boton_superior_gi{
+	margin-left:25px;
+}
+#span_sam{
+	margin-top:5px;
+	font-size:30px;
+}
+.span_completo{
+	height:40px;	
+	padding:0px 0px 0px 0px;
+	font-family:verdana;
+	font-size:10px;
+	margin-top:15px;
+	text-align:center;	
+	display:none;
+}
+* html .span_completo{
+	margin-top:30px;
+}
+#caja_botones_sup_gi{
+	position:relative;
+	width:100%;
+	height:80px;
+	margin-top:20px;
+}
+* html #caja_botones_sup_gi{
+	margin-top:0px;
+}
+/********************* INICIO MENU CABECERA *****************/
+#menu_taquillas{
+	width:90%;	
+}
+#menu_habitaciones{
+	width:85%;	
+}
+#menu_usuarios{
+	width:80%;
+}
+#menu_reaj{
+	width:75%;
+}
+#menu_tarifas{
+	width:70%;
+}
+#menu_ipolicial{
+	width:65%;
+}
+#menu_skins{
+	width:60%;	
+}
+.titulo{
+	text-align:left;
+	font-family:Verdana;
+	font-size:18px;
+	font-weight:bold;
+/*	background-color:#467BAF;*/	
+	color:#F3F3F3;	
+	max-height:30px;
+}
+
+/********************* FIN MENU CABECERA *****************/

@@ -1,0 +1,369 @@
+#nom_hab {
+  text-align: center;
+  height: 20px;
+  width: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #064C87;
+  color: white;
+}
+
+#no_cama {
+  height: 20px;
+  width: 20px;
+  background-color: #064C87;
+  cursor: default;
+}
+
+#cama_libre {
+  height: 20px;
+  width: 20px;
+  background-color: #557dae;
+  cursor: default;
+}
+
+#cama_reservada {
+  height: 20px;
+  width: 20px;
+  background-color: #FF0000;
+  cursor: pointer;
+}
+
+#cama_ocupada {
+  height: 20px;
+  width: 20px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+
+#cama_grupo1 {
+  height: 20px;
+  width: 20px;
+  background-color: #F0E68C;
+  cursor: pointer;
+}
+
+#cama_grupo2 {
+  height: 20px;
+  width: 20px;
+  background-color: #D02090;
+  cursor: pointer;
+}
+
+#titulo_tablas {
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #FFFFFF;
+}
+
+#tabla_detalles {
+  background-color: #F4FCFF;
+}
+
+#tabla_calendario {
+  font-size: 15px;
+  font-weight: bold;
+  color: #3F7BCC;
+  background-color: #F4FCFF;
+}
+
+#tabla_habitaciones {
+  background-color: #064C87;
+}
+
+#texto_detalles {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+#texto_listados {
+  font-size: 11px;
+  font-weight: bold;
+  color: #3F7BCC;
+}
+
+#titulo_listado {
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #064C87;
+  color: #FFFFFF;
+}
+
+#texto_calendario {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+#boton {
+  background-color: transparent;
+  border-color: #3F7BCC;
+  border-style: solid;
+  color: #3F7BCC;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#seleccion {
+  background-color: #F4FCFF;
+  border-color: #3F7BCC;
+  border-style: solid;
+  color: #3F7BCC;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+#titulo1_tabla_grupos {
+  font-size: 14px;
+  font-weight: bold;
+  
+}
+
+#titulo2_tabla_grupos {
+  font-size: 12px;  
+  font-weight: bold;
+}
+
+#edades_tabla_grupos {
+  font-size: 11px;  
+  font-weight: bold;
+}
+
+#td_tabla_grupos {
+  font-size: 11px;  
+  font-weight: bold;
+  color: #3F7BCC;
+}
+
+#ok {
+  color: green;
+}
+
+#no {
+  color: red;
+}
+
+/* <Input type=text...> de los detalles de las estancias*/
+
+#input_text {
+  border-style: solid;
+  border-color: #F4FCFF;
+  background-color: #F4FCFF;
+  color: #3F7BCC;
+  font-size: 11px;
+  font-weight: bold;  
+}
+
+#input_text_resaltado {
+  border-style: solid;
+  border-color: #F4FCFF;
+  background-color: #F4FCFF;
+  color: green;
+  font-size: 11px;
+  font-weight: bold;  
+}
+
+#input_text_buscar {
+  border-style: solid;
+  border-color: #3F7BCC;
+  background-color: #F4FCFF;
+  color: #3F7BCC;
+  font-size: 11px;
+  font-weight: bold;  
+}
+
+/*Taquillas*/
+
+#no_taquilla {
+  height: 20px;
+  width: 10px;
+  background-color: #064C87;
+  cursor: default;
+}
+
+/*** INICIO PABLO ***/
+html #no_taquilla{
+	height: 20px;
+	width:10px;
+	font-size: 11px;
+	background-color: #064C87;
+  cursor: default;
+}
+
+#nom_taq_list {
+  text-align: center;
+  height: 20px;
+  min-width: 30px;
+  width: 45px;
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #064C87;
+  color: white;
+  text-align:center;
+}
+
+#taquilla_libre_list {
+  height: 20px;
+  min-width: 30px;
+  width: 45px;
+  background-color: #557dae;
+  font-size: 11px;
+  text-align:center;
+  cursor: default;
+
+}
+/*** FIN PABLO ***/
+
+/*** Cambiado por KIKE ***/
+    tbody.scrollContent2 td, tbody.scrollContent tr.normalRow td {
+	border-right: 1px solid #CCC;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+tbody.scrollContent2 td, tbody.scrollContent tr.normalRow td {
+	border-right: 1px solid #CCC;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+table.scrollContent2 {
+	border-right: 1px solid #3F7BCC;
+	border-left: 1px solid #3F7BCC;
+	border-bottom: 1px solid #3F7BCC;
+
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
+/*** Fin Cambiado por KIKE ***/
+
+#nom_taq {
+  text-align: center;
+  height: 20px;
+  width: 25px;
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #064C87;
+  color: white;
+}
+
+#taquilla_libre {
+  height: 20px;
+  width: 25px;
+  background-color: #557dae;
+  cursor: default;
+}
+
+#taquilla_ocupada {
+  height: 20px;
+  width: 25px;
+  background-color: #EECBAD;
+  cursor: pointer;
+}
+
+#imagen-boton {
+  cursor:pointer;
+}
+
+/* Estilo para las tablas con scroll */
+
+div.tableContainer {
+	clear: both;
+	border: 1px solid #3F7BCC;
+	overflow-y: scroll;
+}
+
+div.tableContainer table {
+	float: left;
+}
+
+thead.fixedHeader th {
+  	font-size: 11px;
+	background-color: #064C87;
+	border-left: 1px solid #F4FCFF;
+	border-right: 1px solid #F4FCFF;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+thead.fixedHeader tr {
+	position: relative;
+}
+
+tbody.scrollContent {
+	background-color: #F4FCFF;
+}
+
+tbody.scrollContent td, tbody.scrollContent tr.normalRow td {
+	border-right: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/*tbody listado tipo reaj, líneas horizontales*/
+tbody.scrollContentr td, tbody.scrollContent tr.normalRow td {
+	border-right: 0px solid #CCC;
+	border-left: 0px solid #CCC;
+	border-top:  1px solid #CCC;
+	border-bottom:  1px solid #CCC;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/* Fin tablas con scroll */
+
+/* Natalia */
+#texto_listadosrojo {
+  font-size: 11px;
+  font-weight: bold;
+  color: #970000;
+background-color: #EEC1C1;
+
+}
+
+
+/*Mensaje de error al intentar acceder a una parte del sistema que no tienes permisos*/
+
+.error{
+	color:red;
+	font-family:Verdana;
+	position:relative;
+	top:200px;
+	font-weight:bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

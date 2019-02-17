@@ -1,0 +1,74 @@
+/*************************    FORMULARIOS     *****************************/
+.boton_submit{
+	width:80px;
+	height:30px;
+	color:#f3f3f3;
+	cursor:pointer;
+	background-color:#5A90CF;
+	font-family:Arial;
+	font-weight:bold;
+	font-size:14px;	
+	border:solid 2px #064C87;
+}
+.label_formulario{
+	font-family:Verdana;
+	font-size:12px;
+	color:#467DB5;
+	font-weight:bold;
+	padding-right:10px;	
+}
+.input_formulario{
+	background-color:#F4FCFF;
+	font-family:Verdana;
+	font-size:11px;
+	border:solid 2px #8FBBE2;
+	
+	color:#000000;
+}
+.select_formulario{
+	background-color:#F4FCFF;
+	font-family:Verdana;
+	font-size:11px;
+	border:solid 2px #8FBBE2;
+	
+	color:#000000;
+}
+.check_formulario{
+	background-color:#F4FCFF;
+	font-family:Verdana;
+	font-size:11px;
+	border:solid 2px #8FBBE2;
+	color:#000000;
+}
+.text_area_formulario{
+	font-family:Verdana;
+	font-size:11px;
+	border:solid 2px #8FBBE2;
+	color:#000000;
+}
+.label2_formulario{
+	font-family:Verdana;
+	font-size:15px;
+	color:#235C8F;
+	font-weight:bold;
+	padding-right:10px;
+	text-decoration:underline;	
+}
+/**********************************/
+/* Estilos Javi*/
+.label_formulario_desac{
+	font-family:Verdana;
+	font-size:12px;
+	color:#CACACA;
+	font-weight:bold;
+	padding-right:10px;	
+}
+.input_formulario_desac{
+	background-color:#F4FCFF;
+	font-family:Verdana;
+	font-size:11px;
+	border:2px solid #DDDDDD;	
+	color:#000000;
+}
+/* Fin Estilos Javi */
+/********************************/
